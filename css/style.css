@@ -1,0 +1,32 @@
+.nav-custom {
+  background-color: #49a078;
+}
+
+.nav-link {
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: #d3d3d3;
+}
+
+.btn {
+  background-color: #216869;
+  color: #fff;
+  padding: 0.5em 1.5em;
+}
+
+.btn:hover {
+  background-color: #267576;
+  color: #fff;
+}
+
+@media only screen and (min-width: 992px) {
+  .nav-custom {
+    padding: 1em 8.125em;
+  }
+
+  .btn {
+    padding: 0.5em 1.75em;
+  }
+}
