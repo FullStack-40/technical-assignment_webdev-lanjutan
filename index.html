@@ -58,135 +58,153 @@
               <a class="nav-link" href="#">Kalkulator BMI</a>
             </li>
           </ul>
-          <button type="button" class="btn">Masuk</button>
+          <button type="button" class="btn text-light py-2 px-4">Masuk</button>
         </div>
       </div>
     </nav>
 
-    <section id="hero">
+    <section id="hero" class="pt-5">
       <div class="container-fluid">
         <div class="row d-flex align-items-center">
           <div class="col hero-text">
-            <h1>LifeWell</h1>
-            <p>
+            <h1 class="fw-bold text-light fs-1">LifeWell</h1>
+            <p class="text-light">
               Life Well adalah aplikasi website yang bertujuan untuk memberikan
               solusi kesehatan yang menyediakan fasilitas berupa sesi konsultasi
               gizi dan kesehatan dengan dokter-dokter yang sudah berpengalaman
               dibidangnya, juga membantu Anda mencapai tujuan kesehatan Anda
               dengan mudah dan efektif.
             </p>
-            <button type="button" class="btn">Konsultasi Sekarang</button>
+            <button type="button" class="btn text-light py-2 px-4">
+              Konsultasi Sekarang
+            </button>
           </div>
-          <div class="col hero-image">
+          <div class="col hero-image position-relative">
             <img
               src="./img/hero-image.png"
               class="img-fluid"
               alt="Hero Image"
               width="600"
             />
-            <span id="circle"></span>
+            <span
+              id="circle"
+              class="d-block position-absolute rounded-circle"
+            ></span>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="advantages">
+    <section id="advantages" class="mt-5">
       <div class="container-fluid">
-        <div class="row advantage-row">
-          <div class="col-lg-5 advantages-img">
-            <img
-              src="./img/adv-image.png"
-              class="img-fluid"
-              alt="Advantage Image"
-            />
+        <div class="row d-flex align-items-center">
+          <div class="col-lg-6 position-relative advantages-img">
+            <img src="./img/adv-image.png" class="img-fluid" alt="Advantage
+            Image" width=550" />
             <span id="square"></span>
           </div>
-          <div class="col-lg-7 advantages-text">
-            <h1 class="title">Apa Kelebihan <span>LifeWell</span>?</h1>
+          <div class="col-lg-6 advantages-text">
+            <h1 class="title fw-bold fs-1">
+              Apa Kelebihan <span>LifeWell</span>?
+            </h1>
             <p class="desc">
               Berikut adalah beberapa kelebihan yang kami tawarkan untuk
               membantu anda dalam menangani masalah anda
             </p>
-            <div class="container-fluid advantage-container">
-              <div class="row gap-3">
-                <div class="col-4 advantages-list">
-                  <div class="advantages-icons">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="60"
-                      height="60"
-                      viewBox="0 0 60 60"
-                      fill="none"
-                    >
-                      <path
-                        d="M18.2609 27.6923C14.8015 27.6923 11.4839 26.4767 9.03773 24.3128C6.59161 22.1489 5.21739 19.214 5.21739 16.1538V6.92308C5.21739 6.31104 5.49223 5.72407 5.98146 5.29129C6.47068 4.85852 7.13421 4.61538 7.82608 4.61538H10.4348C11.1266 4.61538 11.7902 4.37225 12.2794 3.93948C12.7686 3.5067 13.0435 2.91973 13.0435 2.30769C13.0435 1.69565 12.7686 1.10868 12.2794 0.675907C11.7902 0.243131 11.1266 0 10.4348 0H7.82608C5.75048 0 3.75988 0.729394 2.29221 2.02772C0.824532 3.32605 0 5.08696 0 6.92308V16.1538C0.00335327 18.7609 0.722014 21.3283 2.09426 23.6356C3.46651 25.9428 5.45132 27.9209 7.87826 29.4C10.21 31.2185 12.101 33.4362 13.4371 35.919C14.7732 38.4019 15.5267 41.0985 15.6522 43.8462C15.6522 48.1304 17.5761 52.2392 21.0007 55.2686C24.4252 58.2981 29.0699 60 33.913 60C38.7561 60 43.4008 58.2981 46.8254 55.2686C50.25 52.2392 52.1739 48.1304 52.1739 43.8462V41.2154C54.633 40.6537 56.7761 39.3179 58.2015 37.4584C59.627 35.599 60.2368 33.3434 59.9168 31.1146C59.5968 28.8858 58.3689 26.8368 56.4632 25.3516C54.5575 23.8664 52.105 23.047 49.5652 23.047C47.0254 23.047 44.5729 23.8664 42.6672 25.3516C40.7615 26.8368 39.5336 28.8858 39.2136 31.1146C38.8936 33.3434 39.5034 35.599 40.9288 37.4584C42.3543 39.3179 44.4974 40.6537 46.9565 41.2154V43.8462C46.9565 46.9063 45.5823 49.8412 43.1362 52.0051C40.69 54.169 37.3724 55.3846 33.913 55.3846C30.4537 55.3846 27.136 54.169 24.6899 52.0051C22.2438 49.8412 20.8696 46.9063 20.8696 43.8462C21.0016 41.0951 21.7633 38.3964 23.1085 35.9133C24.4537 33.4303 26.3544 31.2145 28.6956 29.4C31.1129 27.9158 33.0876 25.9354 34.4506 23.6285C35.8135 21.3216 36.5242 18.7568 36.5217 16.1538V6.92308C36.5217 5.08696 35.6972 3.32605 34.2295 2.02772C32.7618 0.729394 30.7712 0 28.6956 0H26.0869C25.3951 0 24.7315 0.243131 24.2423 0.675907C23.7531 1.10868 23.4783 1.69565 23.4783 2.30769C23.4783 2.91973 23.7531 3.5067 24.2423 3.93948C24.7315 4.37225 25.3951 4.61538 26.0869 4.61538H28.6956C29.3875 4.61538 30.051 4.85852 30.5403 5.29129C31.0295 5.72407 31.3043 6.31104 31.3043 6.92308V16.1538C31.3043 17.6691 30.967 19.1695 30.3115 20.5694C29.656 21.9693 28.6952 23.2413 27.484 24.3128C26.2728 25.3842 24.8349 26.2341 23.2524 26.814C21.6699 27.3939 19.9738 27.6923 18.2609 27.6923ZM49.5652 36.9231C48.1815 36.9231 46.8544 36.4368 45.8759 35.5713C44.8975 34.7057 44.3478 33.5318 44.3478 32.3077C44.3478 31.0836 44.8975 29.9097 45.8759 29.0441C46.8544 28.1786 48.1815 27.6923 49.5652 27.6923C50.9489 27.6923 52.276 28.1786 53.2544 29.0441C54.2329 29.9097 54.7826 31.0836 54.7826 32.3077C54.7826 33.5318 54.2329 34.7057 53.2544 35.5713C52.276 36.4368 50.9489 36.9231 49.5652 36.9231Z"
-                        fill="#49A078"
-                      />
-                    </svg>
-                  </div>
-                  <h1 class="advantages-title">Dokter Berpengalaman</h1>
-                  <p class="advantages-desc">
-                    Dokter yang berpengalaman pada masing-masing bidang dengan
-                    jam terbang tinggi dan kecakapan dalam membantu anda.
-                  </p>
-                </div>
-                <div class="col-4 advantages-list">
-                  <div class="advantages-icons">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="61"
-                      height="60"
-                      viewBox="0 0 61 60"
-                      fill="none"
-                    >
-                      <path
-                        d="M30.0818 50C35.4006 50 40.5015 47.8929 44.2625 44.1421C48.0234 40.3914 50.1363 35.3043 50.1363 30C50.1363 24.6957 48.0234 19.6086 44.2625 15.8579C40.5015 12.1071 35.4006 10 30.0818 10C24.763 10 19.6621 12.1071 15.9011 15.8579C12.1402 19.6086 10.0273 24.6957 10.0273 30C10.0273 35.3043 12.1402 40.3914 15.9011 44.1421C19.6621 47.8929 24.763 50 30.0818 50ZM30.0818 5C33.3738 5 36.6335 5.64664 39.6749 6.90301C42.7163 8.15938 45.4798 10.0009 47.8076 12.3223C50.1354 14.6438 51.9819 17.3998 53.2417 20.4329C54.5015 23.4661 55.1499 26.717 55.1499 30C55.1499 36.6304 52.5088 42.9893 47.8076 47.6777C43.1064 52.3661 36.7303 55 30.0818 55C16.2191 55 5.01367 43.75 5.01367 30C5.01367 23.3696 7.65477 17.0107 12.356 12.3223C17.0571 7.63392 23.4333 5 30.0818 5ZM31.3352 17.5V30.625L42.6158 37.3L40.7357 40.375L27.575 32.5V17.5H31.3352Z"
-                        fill="#49A078"
-                      />
-                    </svg>
-                  </div>
-                  <br />
-                  <h1 class="advantages-title">Layanan 24 Jam</h1>
-                  <p class="advantages-desc">
-                    Layanan 24 Jam dengan cepat tanggap yang senantiasa membantu
-                    anda dalam keadaan apapun.
-                  </p>
-                </div>
-                <div class="col-4 advantages-list">
-                  <div class="advantages-icons">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="60"
-                      height="60"
-                      viewBox="0 0 60 60"
-                      fill="none"
-                    >
-                      <g clip-path="url(#clip0_88_49)">
-                        <path
-                          d="M8.82354 40V36.6667H1.22125e-05V30H17.6471V23.3333H3.52942C2.52942 23.3333 1.6906 23.0144 1.01295 22.3767C0.335307 21.7389 -0.00234073 20.9467 1.22125e-05 20V6.66667C1.22125e-05 5.72222 0.338836 4.93111 1.01648 4.29333C1.69413 3.65556 2.53178 3.33556 3.52942 3.33333H8.82354V0H15.8824V3.33333H24.7059V10H7.05883V16.6667H21.1765C22.1765 16.6667 23.0153 16.9867 23.6929 17.6267C24.3706 18.2667 24.7082 19.0578 24.7059 20V33.3333C24.7059 34.2778 24.3671 35.07 23.6894 35.71C23.0118 36.35 22.1741 36.6689 21.1765 36.6667H15.8824V40H8.82354ZM35.1177 60L20.1177 45.8333L25.0588 41.1667L35.1177 50.6667L55.0588 31.8333L60 36.5L35.1177 60Z"
-                          fill="#49A078"
-                        />
-                      </g>
-                      <defs>
-                        <clipPath id="clip0_88_49">
-                          <rect width="60" height="60" fill="white" />
-                        </clipPath>
-                      </defs>
-                    </svg>
-                  </div>
-                  <h1 class="advantages-title">Harga Terjangkau</h1>
-                  <p class="advantages-desc">
-                    Harga yang terjangkau yang dapat memudahkan anda dalam
-                    memesan jasa konsultasi.
-                  </p>
-                </div>
+          </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col mt-5">
+            <div class="card p-3 text-light">
+              <div
+                class="card-icons rounded-2 d-flex align-items-center justify-content-center mb-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="60"
+                  height="60"
+                  viewBox="0 0 60 60"
+                  fill="none"
+                >
+                  <path
+                    d="M18.2609 27.6923C14.8015 27.6923 11.4839 26.4767 9.03773 24.3128C6.59161 22.1489 5.21739 19.214 5.21739 16.1538V6.92308C5.21739 6.31104 5.49223 5.72407 5.98146 5.29129C6.47068 4.85852 7.13421 4.61538 7.82608 4.61538H10.4348C11.1266 4.61538 11.7902 4.37225 12.2794 3.93948C12.7686 3.5067 13.0435 2.91973 13.0435 2.30769C13.0435 1.69565 12.7686 1.10868 12.2794 0.675907C11.7902 0.243131 11.1266 0 10.4348 0H7.82608C5.75048 0 3.75988 0.729394 2.29221 2.02772C0.824532 3.32605 0 5.08696 0 6.92308V16.1538C0.00335327 18.7609 0.722014 21.3283 2.09426 23.6356C3.46651 25.9428 5.45132 27.9209 7.87826 29.4C10.21 31.2185 12.101 33.4362 13.4371 35.919C14.7732 38.4019 15.5267 41.0985 15.6522 43.8462C15.6522 48.1304 17.5761 52.2392 21.0007 55.2686C24.4252 58.2981 29.0699 60 33.913 60C38.7561 60 43.4008 58.2981 46.8254 55.2686C50.25 52.2392 52.1739 48.1304 52.1739 43.8462V41.2154C54.633 40.6537 56.7761 39.3179 58.2015 37.4584C59.627 35.599 60.2368 33.3434 59.9168 31.1146C59.5968 28.8858 58.3689 26.8368 56.4632 25.3516C54.5575 23.8664 52.105 23.047 49.5652 23.047C47.0254 23.047 44.5729 23.8664 42.6672 25.3516C40.7615 26.8368 39.5336 28.8858 39.2136 31.1146C38.8936 33.3434 39.5034 35.599 40.9288 37.4584C42.3543 39.3179 44.4974 40.6537 46.9565 41.2154V43.8462C46.9565 46.9063 45.5823 49.8412 43.1362 52.0051C40.69 54.169 37.3724 55.3846 33.913 55.3846C30.4537 55.3846 27.136 54.169 24.6899 52.0051C22.2438 49.8412 20.8696 46.9063 20.8696 43.8462C21.0016 41.0951 21.7633 38.3964 23.1085 35.9133C24.4537 33.4303 26.3544 31.2145 28.6956 29.4C31.1129 27.9158 33.0876 25.9354 34.4506 23.6285C35.8135 21.3216 36.5242 18.7568 36.5217 16.1538V6.92308C36.5217 5.08696 35.6972 3.32605 34.2295 2.02772C32.7618 0.729394 30.7712 0 28.6956 0H26.0869C25.3951 0 24.7315 0.243131 24.2423 0.675907C23.7531 1.10868 23.4783 1.69565 23.4783 2.30769C23.4783 2.91973 23.7531 3.5067 24.2423 3.93948C24.7315 4.37225 25.3951 4.61538 26.0869 4.61538H28.6956C29.3875 4.61538 30.051 4.85852 30.5403 5.29129C31.0295 5.72407 31.3043 6.31104 31.3043 6.92308V16.1538C31.3043 17.6691 30.967 19.1695 30.3115 20.5694C29.656 21.9693 28.6952 23.2413 27.484 24.3128C26.2728 25.3842 24.8349 26.2341 23.2524 26.814C21.6699 27.3939 19.9738 27.6923 18.2609 27.6923ZM49.5652 36.9231C48.1815 36.9231 46.8544 36.4368 45.8759 35.5713C44.8975 34.7057 44.3478 33.5318 44.3478 32.3077C44.3478 31.0836 44.8975 29.9097 45.8759 29.0441C46.8544 28.1786 48.1815 27.6923 49.5652 27.6923C50.9489 27.6923 52.276 28.1786 53.2544 29.0441C54.2329 29.9097 54.7826 31.0836 54.7826 32.3077C54.7826 33.5318 54.2329 34.7057 53.2544 35.5713C52.276 36.4368 50.9489 36.9231 49.5652 36.9231Z"
+                    fill="#49A078"
+                  />
+                </svg>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title fs-4 fw-bold">Dokter Berpengalaman</h5>
+                <p class="card-text">
+                  Dokter yang berpengalaman pada masing-masing bidang dan
+                  kecakapan dalam membantu anda.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col mt-5">
+            <div class="card p-3 text-light">
+              <div
+                class="card-icons rounded-2 d-flex align-items-center justify-content-center mb-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="61"
+                  height="60"
+                  viewBox="0 0 61 60"
+                  fill="none"
+                >
+                  <path
+                    d="M30.0818 50C35.4006 50 40.5015 47.8929 44.2625 44.1421C48.0234 40.3914 50.1363 35.3043 50.1363 30C50.1363 24.6957 48.0234 19.6086 44.2625 15.8579C40.5015 12.1071 35.4006 10 30.0818 10C24.763 10 19.6621 12.1071 15.9011 15.8579C12.1402 19.6086 10.0273 24.6957 10.0273 30C10.0273 35.3043 12.1402 40.3914 15.9011 44.1421C19.6621 47.8929 24.763 50 30.0818 50ZM30.0818 5C33.3738 5 36.6335 5.64664 39.6749 6.90301C42.7163 8.15938 45.4798 10.0009 47.8076 12.3223C50.1354 14.6438 51.9819 17.3998 53.2417 20.4329C54.5015 23.4661 55.1499 26.717 55.1499 30C55.1499 36.6304 52.5088 42.9893 47.8076 47.6777C43.1064 52.3661 36.7303 55 30.0818 55C16.2191 55 5.01367 43.75 5.01367 30C5.01367 23.3696 7.65477 17.0107 12.356 12.3223C17.0571 7.63392 23.4333 5 30.0818 5ZM31.3352 17.5V30.625L42.6158 37.3L40.7357 40.375L27.575 32.5V17.5H31.3352Z"
+                    fill="#49A078"
+                  />
+                </svg>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title fs-4 fw-bold">Layanan 24 Jam</h5>
+                <p class="card-text">
+                  Layanan 24 Jam dengan cepat tanggap yang senantiasa membantu
+                  anda dalam keadaan apapun.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col mt-5">
+            <div class="card p-3 text-light">
+              <div
+                class="card-icons rounded-2 d-flex align-items-center justify-content-center mb-4"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="60"
+                  height="60"
+                  viewBox="0 0 60 60"
+                  fill="none"
+                >
+                  <g clip-path="url(#clip0_88_49)">
+                    <path
+                      d="M8.82354 40V36.6667H1.22125e-05V30H17.6471V23.3333H3.52942C2.52942 23.3333 1.6906 23.0144 1.01295 22.3767C0.335307 21.7389 -0.00234073 20.9467 1.22125e-05 20V6.66667C1.22125e-05 5.72222 0.338836 4.93111 1.01648 4.29333C1.69413 3.65556 2.53178 3.33556 3.52942 3.33333H8.82354V0H15.8824V3.33333H24.7059V10H7.05883V16.6667H21.1765C22.1765 16.6667 23.0153 16.9867 23.6929 17.6267C24.3706 18.2667 24.7082 19.0578 24.7059 20V33.3333C24.7059 34.2778 24.3671 35.07 23.6894 35.71C23.0118 36.35 22.1741 36.6689 21.1765 36.6667H15.8824V40H8.82354ZM35.1177 60L20.1177 45.8333L25.0588 41.1667L35.1177 50.6667L55.0588 31.8333L60 36.5L35.1177 60Z"
+                      fill="#49A078"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_88_49">
+                      <rect width="60" height="60" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title fs-4 fw-bold">Harga Terjangkau</h5>
+                <p class="card-text">
+                  Harga yang terjangkau yang dapat memudahkan anda dalam memesan
+                  jasa konsultasi.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
