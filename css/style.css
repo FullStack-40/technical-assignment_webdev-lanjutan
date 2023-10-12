@@ -87,6 +87,33 @@ body {
   background-color: #fff;
 }
 
+/* Best Dokter section */
+#best-doctor {
+  padding: 4em 8em;
+}
+
+#best-doctor span {
+  color: #49a078;
+}
+
+#best-doctor .desc {
+  font-size: 1.1em;
+  width: 70%;
+  margin: 1em auto;
+}
+
+.doctors h3 {
+  font-size: 1.5em;
+}
+
+.carousel-item h3 {
+  color: #49a078;
+}
+
+.carousel-item p {
+  font-size: 1.1em;
+}
+
 @media screen and (max-width: 768px) {
   /* Nav */
   .nav-custom {
@@ -181,5 +208,42 @@ body {
   .card {
     width: 90%;
     margin: 0 auto;
+  }
+
+  /* best doctor */
+  #best-doctor {
+    padding: 1em 0;
+  }
+
+  #best-doctor > .container-fluid > h1 {
+    font-size: 2em;
+  }
+
+  #best-doctor .desc {
+    font-size: 1em;
+    width: 90%;
+  }
+
+  .doctors {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+  }
+
+  .doctors img {
+    width: 300px;
+  }
+
+  .doctors h1 {
+    font-size: 1.5em;
+  }
+
+  .doctors h3 {
+    font-size: 1.1em;
+  }
+
+  .doctors p {
+    margin-bottom: 3em;
+    font-size: 1em;
   }
 }
