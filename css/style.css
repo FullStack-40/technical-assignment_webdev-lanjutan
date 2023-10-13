@@ -3,6 +3,10 @@ body {
 }
 
 /* Nav */
+.nav-scroll {
+  border-bottom: 1px solid #ffffff48;
+}
+
 .nav-custom {
   background-color: #49a078;
   padding: 1em 8em;
@@ -154,9 +158,10 @@ address {
 
 #subs-button {
   width: 2.4em;
-  height: 1.8em;
+  height: 1.75em;
   background-color: #263238;
-  border-radius: 10px;
+  border: 0;
+  border-radius: 0.7em;
   position: absolute;
   top: 0.54em;
   right: 0;
@@ -168,7 +173,7 @@ address {
 #copyright {
   font-size: 12px;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 4em;
 }
 
 @media screen and (max-width: 768px) {
