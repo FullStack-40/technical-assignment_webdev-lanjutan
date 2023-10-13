@@ -114,6 +114,63 @@ body {
   font-size: 1.1em;
 }
 
+/* Footer */
+footer {
+  background-color: #49a078;
+  padding: 4em 8em 0.2em;
+}
+
+footer p {
+  font-size: 0.9em;
+  margin-bottom: 0;
+}
+
+#service-list a {
+  font-size: 0.9em;
+  color: #fff;
+}
+
+#service-list a:hover {
+  color: #d3d3d3;
+}
+
+address {
+  font-size: 0.9em;
+}
+
+#subs-form input {
+  width: 98%;
+  height: 1.9em;
+  border: 0;
+  border-radius: 1em;
+  padding: 0 0.7em;
+  margin-top: 0.8em;
+  font-size: 0.8em;
+}
+
+#subs-form {
+  position: relative;
+}
+
+#subs-button {
+  width: 2.4em;
+  height: 1.8em;
+  background-color: #263238;
+  border-radius: 10px;
+  position: absolute;
+  top: 0.54em;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#copyright {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 50px;
+}
+
 @media screen and (max-width: 768px) {
   /* Nav */
   .nav-custom {
@@ -245,5 +302,41 @@ body {
   .doctors p {
     margin-bottom: 3em;
     font-size: 1em;
+  }
+
+  /* footer mobile*/
+  footer {
+    padding: 2em 0 0.2em;
+  }
+
+  footer p {
+    font-size: 0.8em;
+  }
+
+  footer .row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  footer .col-6 {
+    width: 100%;
+  }
+
+  .footer-logo {
+    width: 170px;
+  }
+
+  address {
+    margin-bottom: 0;
+  }
+
+  address p {
+    font-size: 0.9em;
+  }
+
+  #subs-form {
+    width: 50%;
+    font-size: 0.9em;
   }
 }
