@@ -6,11 +6,17 @@ p {
   font-size: 16px;
 }
 
-section {
+#forum-diskusi {
   padding: 1em 8em;
+  margin-top: 8em;
 }
 
-section span {
+#forum-diskusi h1 {
+  margin-bottom: 2.5em;
+  font-size: 28px;
+}
+
+#forum-diskusi span {
   color: #49a078;
 }
 
@@ -22,16 +28,20 @@ section span {
   background-color: #216869cf;
 }
 
-.square {
+#forum-diskusi .square {
   border: 1px solid #d3d3d3;
 }
 
-.square input:focus,
-.square input:checked {
+#forum-diskusi .square input:focus,
+#forum-diskusi .square input:checked {
   background-color: #49a078;
 }
 
-.square span {
+#forum-diskusi .square h3 {
+  font-size: 20px;
+}
+
+#forum-diskusi .square span {
   background-color: #49a078;
   border-radius: 10px;
   font-size: 14px;
@@ -55,6 +65,10 @@ form svg {
   z-index: 100;
 }
 
+#forum-diskusi .search {
+  margin-bottom: 2em;
+}
+
 .card h3 {
   font-size: 18px;
 }
@@ -64,5 +78,44 @@ form svg {
   font-size: 14px;
 }
 
-#like-container {
+@media screen and (max-width: 768px) {
+  #forum-diskusi {
+    padding: 1em 0;
+    margin-top: 6em;
+  }
+
+  #forum-diskusi .container-fluid .row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  #forum-diskusi h1 {
+    font-size: 20px;
+    margin-bottom: 1em;
+  }
+
+  #forum-diskusi .square {
+    width: 93%;
+    margin: 0 auto;
+  }
+
+  #forum-diskusi .square > div {
+    margin-bottom: 0;
+  }
+
+  #forum-diskusi .square h3 {
+    font-size: 18px;
+  }
+
+  #forum-diskusi .keyword {
+    display: none;
+  }
+
+  #forum-diskusi .search {
+    width: 100%;
+    margin-top: 2em;
+    margin-bottom: 1em;
+  }
 }

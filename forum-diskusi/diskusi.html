@@ -33,7 +33,7 @@
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img
-            src="./img/life-well-logo.png"
+            src="../img/life-well-logo.png"
             alt="Logo"
             width="170"
             class="d-inline-block align-text-top"
@@ -53,7 +53,9 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Beranda</a>
+              <a class="nav-link" aria-current="page" href="../index.html"
+                >Beranda</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Daftar Dokter</a>
@@ -73,13 +75,13 @@
       </div>
     </nav>
 
-    <section class="mt-5">
+    <section id="forum-diskusi">
       <div class="container-fluid">
-        <h1 class="fw-semibold fs-2">
+        <h1 class="fw-semibold">
           Selamat datang di <span>Forum Diskusi</span>
         </h1>
         <div class="row mt-5">
-          <div class="col-3">
+          <div class="col-lg-3">
             <button
               id="add-discussion"
               type="button"
@@ -88,8 +90,8 @@
               Buat diskusi baru
             </button>
             <div class="square mt-5 p-4">
-              <h3 class="text-center mb-4 fs-3">Filter diskusi</h3>
-              <div class="mb-4">
+              <h3 class="text-center mb-4">Urutkan diskusi</h3>
+              <div>
                 <div class="form-check">
                   <input
                     class="form-check-input"
@@ -116,8 +118,8 @@
               </div>
             </div>
 
-            <div class="square mt-5 px-2 py-4">
-              <h3 class="text-center mb-4 fs-3">Kata kunci populer</h3>
+            <div class="square mt-5 px-2 py-4 keyword">
+              <h3 class="text-center mb-4">Kata kunci populer</h3>
               <div class="d-flex flex-wrap gap-2 px-2">
                 <span class="d-inline-block py-1 px-2 text-light">#gizi</span>
                 <span class="d-inline-block py-1 px-2 text-light"
@@ -132,8 +134,8 @@
               </div>
             </div>
           </div>
-          <div class="col-9">
-            <form class="container-fluid">
+          <div class="col-lg-9">
+            <form class="container-fluid search">
               <div class="position-relative">
                 <input
                   type="text"
@@ -159,7 +161,7 @@
               </div>
             </form>
 
-            <div class="container-fluid mt-5">
+            <div class="container-fluid">
               <div class="card">
                 <div class="card-body">
                   <div class="header d-flex align-items-center mb-3">
