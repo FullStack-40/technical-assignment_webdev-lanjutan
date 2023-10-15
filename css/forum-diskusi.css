@@ -1,0 +1,68 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+p {
+  font-size: 16px;
+}
+
+section {
+  padding: 1em 8em;
+}
+
+section span {
+  color: #49a078;
+}
+
+#add-discussion {
+  background-color: #216869;
+}
+
+#add-discussion:hover {
+  background-color: #216869cf;
+}
+
+.square {
+  border: 1px solid #d3d3d3;
+}
+
+.square input:focus,
+.square input:checked {
+  background-color: #49a078;
+}
+
+.square span {
+  background-color: #49a078;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+form input {
+  height: 3em;
+  border-radius: 5px;
+  width: 100%;
+  border: 0.5px solid #d3d3d3;
+}
+
+form input:focus {
+  border: 1px solid #49a078;
+  outline: none;
+}
+
+form svg {
+  left: 1em;
+  bottom: 0.9em;
+  z-index: 100;
+}
+
+.card h3 {
+  font-size: 18px;
+}
+
+.card h6 {
+  color: #acacac;
+  font-size: 14px;
+}
+
+#like-container {
+}
