@@ -36,7 +36,7 @@ body {
 }
 
 #hero p {
-  font-size: 1.1em;
+  font-size: 16px;
 }
 
 #hero .hero-image {
@@ -106,26 +106,41 @@ body {
   margin: 1em auto;
 }
 
-.doctors h3 {
-  font-size: 1.5em;
+.carousel-indicators {
+  position: absolute;
+  bottom: -4em;
 }
 
-.carousel-item h3 {
+.carousel-inner h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.carousel-inner h2 {
+  font-size: 1.5em;
+  font-weight: semibold;
+  font-size: 1.25em;
   color: #49a078;
 }
 
-.carousel-item p {
-  font-size: 1.1em;
+.carousel-inner p {
+  font-size: 16px;
+  margin-top: 1em;
+}
+
+.carousel-inner img {
+  border-radius: 20px;
 }
 
 /* Footer */
 footer {
+  margin-top: 4em;
   background-color: #49a078;
   padding: 4em 8em 0.2em;
 }
 
 footer p {
-  font-size: 0.9em;
+  font-size: 14px;
   margin-bottom: 0;
 }
 
@@ -196,12 +211,12 @@ address {
 
   #hero h1 {
     margin-top: 0.5em;
-    font-size: 2.25em;
+    font-size: 40px;
     text-align: center;
   }
 
   #hero p {
-    font-size: 1em;
+    font-size: 16px;
     text-align: center;
     margin-bottom: 1em;
   }
@@ -277,10 +292,6 @@ address {
     padding: 1em 0;
   }
 
-  #best-doctor > .container-fluid > h1 {
-    font-size: 2em;
-  }
-
   #best-doctor .desc {
     font-size: 1em;
     width: 90%;
@@ -292,21 +303,25 @@ address {
     padding: 0 2em;
   }
 
-  .doctors img {
+  #best-doctors img {
     width: 300px;
   }
 
-  .doctors h1 {
-    font-size: 1.5em;
+  .carousel-inner img {
+    width: 350px;
   }
 
-  .doctors h3 {
+  .carousel-inner h1 {
+    font-size: 28px;
+  }
+
+  .carousel-inner h2 {
     font-size: 1.1em;
   }
 
-  .doctors p {
+  .carousel-inner p {
     margin-bottom: 3em;
-    font-size: 1em;
+    font-size: 16px;
   }
 
   /* footer mobile*/
@@ -315,7 +330,7 @@ address {
   }
 
   footer p {
-    font-size: 0.8em;
+    font-size: 14px;
   }
 
   footer .row {
@@ -337,7 +352,7 @@ address {
   }
 
   address p {
-    font-size: 0.9em;
+    font-size: 14px;
   }
 
   #subs-form {
