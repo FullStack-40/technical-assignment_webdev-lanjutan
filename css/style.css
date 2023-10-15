@@ -1,0 +1,362 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+/* Nav */
+.nav-scroll {
+  border-bottom: 1px solid #ffffff48;
+}
+
+.nav-custom {
+  background-color: #49a078;
+  padding: 1em 8em;
+}
+
+.nav-link {
+  color: #fff;
+}
+
+.nav-link:hover {
+  color: #d3d3d3;
+}
+
+.btn {
+  background-color: #216869;
+}
+
+.btn:hover {
+  background-color: #267576;
+}
+
+/* hero section */
+#hero {
+  padding: 4em 8em;
+  margin-top: 4.75em;
+  background-color: #49a078;
+}
+
+#hero p {
+  font-size: 16px;
+}
+
+#hero .hero-image {
+  z-index: 100;
+}
+
+.hero-image #circle {
+  width: 520px;
+  height: 520px;
+  right: 2em;
+  bottom: 0;
+  z-index: -1;
+  background-color: #41b57f;
+}
+
+/* Advantages Section */
+#advantages {
+  padding: 4em 8em;
+}
+
+#advantages #square {
+  display: block;
+  width: 400px;
+  height: 400px;
+  position: absolute;
+  bottom: 1.5em;
+  background-color: #49a078;
+  border-radius: 10px;
+  z-index: -1;
+}
+
+.advantages-text {
+  position: absolute;
+  right: 10em;
+}
+
+#advantages span {
+  color: #49a078;
+}
+
+#advantages .desc {
+  font-size: 1.1em;
+}
+
+.card {
+  background-color: #49a078;
+}
+
+.card-icons {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+}
+
+/* Best Dokter section */
+#best-doctor {
+  padding: 4em 8em;
+}
+
+#best-doctor span {
+  color: #49a078;
+}
+
+#best-doctor .desc {
+  font-size: 1.1em;
+  width: 70%;
+  margin: 1em auto;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: -4em;
+}
+
+.carousel-inner h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.carousel-inner h2 {
+  font-size: 1.5em;
+  font-weight: semibold;
+  font-size: 1.25em;
+  color: #49a078;
+}
+
+.carousel-inner p {
+  font-size: 16px;
+  margin-top: 1em;
+}
+
+.carousel-inner img {
+  border-radius: 20px;
+}
+
+/* Footer */
+footer {
+  margin-top: 4em;
+  background-color: #49a078;
+  padding: 4em 8em 0.2em;
+}
+
+footer p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+#service-list a {
+  font-size: 0.9em;
+  color: #fff;
+}
+
+#service-list a:hover {
+  color: #d3d3d3;
+}
+
+address {
+  font-size: 0.9em;
+}
+
+#subs-form input {
+  width: 98%;
+  height: 1.9em;
+  border: 0;
+  border-radius: 1em;
+  padding: 0 0.7em;
+  margin-top: 0.8em;
+  font-size: 0.8em;
+}
+
+#subs-form {
+  position: relative;
+}
+
+#subs-button {
+  width: 2.4em;
+  height: 1.75em;
+  background-color: #263238;
+  border: 0;
+  border-radius: 0.7em;
+  position: absolute;
+  top: 0.54em;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#copyright {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 4em;
+}
+
+@media screen and (max-width: 768px) {
+  /* Nav */
+  .nav-custom {
+    padding: 1em 0;
+  }
+
+  /* Hero */
+  #hero {
+    margin-top: 3.75em;
+    padding: 3em 0;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  #hero h1 {
+    margin-top: 0.5em;
+    font-size: 40px;
+    text-align: center;
+  }
+
+  #hero p {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  #hero .row {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  #hero .hero-image {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+  }
+
+  .hero-image #circle {
+    display: block;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    bottom: 0;
+    border-radius: 50%;
+    background-color: #41b57f;
+    z-index: -1;
+  }
+
+  /* advantages */
+  #advantages {
+    padding: 1em 0;
+  }
+
+  #advantage-row {
+    display: block;
+  }
+
+  .advantages-img {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+
+  #advantages #square {
+    display: block;
+    width: 250px;
+    height: 250px;
+    position: absolute;
+    bottom: 1em;
+    background-color: #49a078;
+    border-radius: 10px;
+    z-index: -1;
+  }
+
+  .advantages-text {
+    position: static;
+  }
+
+  .advantages-text .title {
+    text-align: center;
+    margin-top: 1em;
+    font-size: 2em;
+    margin-bottom: 1em;
+  }
+
+  .card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* best doctor */
+  #best-doctor {
+    padding: 1em 0;
+  }
+
+  #best-doctor .desc {
+    font-size: 1em;
+    width: 90%;
+  }
+
+  .doctors {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+  }
+
+  #best-doctors img {
+    width: 300px;
+  }
+
+  .carousel-inner img {
+    width: 350px;
+  }
+
+  .carousel-inner h1 {
+    font-size: 28px;
+  }
+
+  .carousel-inner h2 {
+    font-size: 1.1em;
+  }
+
+  .carousel-inner p {
+    margin-bottom: 3em;
+    font-size: 16px;
+  }
+
+  /* footer mobile*/
+  footer {
+    padding: 2em 0 0.2em;
+  }
+
+  footer p {
+    font-size: 14px;
+  }
+
+  footer .row {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  footer .col-6 {
+    width: 100%;
+  }
+
+  .footer-logo {
+    width: 170px;
+  }
+
+  address {
+    margin-bottom: 0;
+  }
+
+  address p {
+    font-size: 14px;
+  }
+
+  #subs-form {
+    width: 50%;
+    font-size: 0.9em;
+  }
+}
