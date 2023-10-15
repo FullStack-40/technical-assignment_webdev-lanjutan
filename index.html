@@ -16,6 +16,8 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
     <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/script.js" defer></script>
   </head>
@@ -116,7 +118,11 @@
         </div>
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col mt-5">
-            <div class="card p-3 text-light">
+            <div
+              class="card p-3 text-light"
+              data-aos="fade-right"
+              data-aos-duration="500"
+            >
               <div
                 class="card-icons rounded-2 d-flex align-items-center justify-content-center mb-4"
               >
@@ -143,7 +149,11 @@
             </div>
           </div>
           <div class="col mt-5">
-            <div class="card p-3 text-light">
+            <div
+              class="card p-3 text-light"
+              data-aos="zoom-in"
+              data-aos-duration="500"
+            >
               <div
                 class="card-icons rounded-2 d-flex align-items-center justify-content-center mb-4"
               >
@@ -170,7 +180,11 @@
             </div>
           </div>
           <div class="col mt-5">
-            <div class="card p-3 text-light">
+            <div
+              class="card p-3 text-light"
+              data-aos="fade-left"
+              data-aos-duration="500"
+            >
               <div
                 class="card-icons rounded-2 d-flex align-items-center justify-content-center mb-4"
               >
@@ -327,5 +341,9 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
