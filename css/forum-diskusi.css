@@ -71,6 +71,14 @@ form svg {
   margin-bottom: 2em;
 }
 
+.card {
+  margin-top: 1em;
+}
+
+.card img {
+  border-radius: 50%;
+}
+
 .card h3 {
   font-size: 18px;
 }
@@ -78,6 +86,20 @@ form svg {
 .card h6 {
   color: #acacac;
   font-size: 14px;
+}
+
+.reply-container,
+.share-container,
+#like-container {
+  display: flex;
+  gap: 0.5em;
+}
+
+.reply-container a,
+#like-container a,
+.share-container a {
+  text-decoration: none;
+  color: #000;
 }
 
 /* Tambah Diskusi */
