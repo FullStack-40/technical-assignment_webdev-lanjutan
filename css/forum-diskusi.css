@@ -93,10 +93,27 @@ form svg {
   font-size: 14px;
 }
 
-#add-diskusi #button {
+#button {
   margin-top: 2em;
   display: flex;
   justify-content: flex-end;
+}
+
+/* Detail diskusi */
+#detail-discussion h3 {
+  font-size: 20px;
+}
+
+#detail-discussion h6 {
+  color: #acacac;
+  font-size: 14px;
+}
+
+#reply-container .row {
+  padding: 1.5em;
+  margin-top: 2em;
+  border: 0.5px solid #bdbdbdca;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 768px) {
@@ -141,12 +158,15 @@ form svg {
   }
 
   /* add diskusi section */
-
   #add-diskusi h3 {
     font-size: 16px;
   }
 
   #add-diskusi p {
     font-size: 12px;
+  }
+
+  #reply-container .row {
+    margin: 1em 0.1em;
   }
 }
