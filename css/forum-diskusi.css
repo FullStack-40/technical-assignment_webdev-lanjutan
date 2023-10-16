@@ -6,15 +6,17 @@ p {
   font-size: 16px;
 }
 
-#forum-diskusi {
+section {
   padding: 1em 8em;
   margin-top: 8em;
 }
 
-#forum-diskusi h1 {
+section h1 {
   margin-bottom: 2.5em;
   font-size: 28px;
 }
+
+/* Daftar Diskusi */
 
 #forum-diskusi span {
   color: #49a078;
@@ -78,8 +80,27 @@ form svg {
   font-size: 14px;
 }
 
+/* Tambah Diskusi */
+#add-diskusi .row {
+  margin-top: 1em;
+}
+
+#add-diskusi h3 {
+  font-size: 20px;
+}
+
+#add-diskusi p {
+  font-size: 14px;
+}
+
+#add-diskusi #button {
+  margin-top: 2em;
+  display: flex;
+  justify-content: flex-end;
+}
+
 @media screen and (max-width: 768px) {
-  #forum-diskusi {
+  section {
     padding: 1em 0;
     margin-top: 6em;
   }
@@ -91,7 +112,7 @@ form svg {
     margin: 0;
   }
 
-  #forum-diskusi h1 {
+  section h1 {
     font-size: 20px;
     margin-bottom: 1em;
   }
@@ -117,5 +138,15 @@ form svg {
     width: 100%;
     margin-top: 2em;
     margin-bottom: 1em;
+  }
+
+  /* add diskusi section */
+
+  #add-diskusi h3 {
+    font-size: 16px;
+  }
+
+  #add-diskusi p {
+    font-size: 12px;
   }
 }
