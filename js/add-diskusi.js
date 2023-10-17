@@ -1,21 +1,46 @@
 function getData() {
-  let title = document.querySelector(".title-discussion").value;
   let keyword = document.querySelector(".keyword-discussion").value;
-  let discussion = document.querySelector(".discussion").value;
+  let description = document.querySelector(".discussion").value;
 
-  return { title, keyword, discussion };
+  return { keyword, description };
 }
 
-function submit() {
+async function submit() {
   const data = getData();
 
-  if (!data.title || !data.keyword || !data.discussion) {
+  if (!data.keyword || !data.description) {
     alert("Tolong lengkapi detail diskusi!");
   } else {
-    alert("Diskusi kamu sudah diunggah!");
-    window.location.href = "diskusi.html";
+    try {
+      const username = localStorage.getItem("username");
+      const createdAt = new Date().toISOString();
+      const response = await fetch(
+        "https://652935bd55b137ddc83e6345.mockapi.io/discussion",
+        {
+          method: "POST",
 
-    return true;
+          body: JSON.stringify({ ...data, liked: 0, username, createdAt }),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8",
+          },
+        }
+      );
+      if (response.status !== 201) {
+        alert("Diskusi kamu gagal diunggah!");
+        console.error(response);
+        return;
+      }
+
+      alert("Diskusi kamu sudah diunggah!");
+      window.location.href = "diskusi.html";
+
+      return true;
+    } catch (error) {
+      alert("Diskusi kamu gagal diunggah!");
+      console.log(error);
+
+      return true;
+    }
   }
 }
 
@@ -23,5 +48,9 @@ const button = document.querySelector("#button button");
 
 button.addEventListener("click", (e) => {
   e.preventDefault();
-  submit();
+  if (localStorage.getItem("login")) {
+    submit();
+  } else {
+    alert("Kamu harus login terlebih dahulu!");
+  }
 });
