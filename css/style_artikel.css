@@ -5,3 +5,15 @@
 #main {
   margin-top: 10%;
 }
+
+#artikelButton {
+  margin-top: 5%;
+}
+
+.btn-lengkap {
+  margin-left: 70%;
+}
+
+.btn-lengkap-main {
+  background-color: #216869 !important;
+}
