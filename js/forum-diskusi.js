@@ -1,6 +1,8 @@
-const getDiscussion = async () => {
-  const discussionContainer = document.querySelector("#discussion-container");
+const discussionContainer = document.querySelector("#discussion-container");
 
+getDiscussion();
+
+async function getDiscussion() {
   const searchDiscussion = document.getElementById("search-discussion");
   searchDiscussion.addEventListener("input", async () => {
     const url = new URL(
@@ -15,7 +17,27 @@ const getDiscussion = async () => {
       });
 
       if (response.ok) {
+        const sort = localStorage.getItem("sort");
         const discussions = await response.json();
+        if (sort === "newest") {
+          discussions.sort(
+            (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+          );
+        } else {
+          discussions.sort(
+            (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+          );
+        }
+
+        document.querySelector(".newest").addEventListener("click", () => {
+          localStorage.setItem("sort", "newest");
+          sortByTimeDescending(discussions);
+        });
+
+        document.querySelector(".oldest").addEventListener("click", () => {
+          localStorage.setItem("sort", "oldest");
+          sortByTimeAscending(discussions);
+        });
 
         discussionContainer.innerHTML = "";
         for (item of discussions) {
@@ -39,7 +61,17 @@ const getDiscussion = async () => {
       }
     );
 
+    const sort = localStorage.getItem("sort");
     const result = await data.json();
+    if (sort === "newest") {
+      result.sort(
+        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+      );
+    } else {
+      result.sort(
+        (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+      );
+    }
     let keywords = {};
 
     for (item of result) {
@@ -53,12 +85,20 @@ const getDiscussion = async () => {
     }
 
     createKeywordContainer(keywords);
+
+    document.querySelector(".newest").addEventListener("click", () => {
+      localStorage.setItem("sort", "newest");
+      sortByTimeDescending(result);
+    });
+
+    document.querySelector(".oldest").addEventListener("click", () => {
+      localStorage.setItem("sort", "oldest");
+      sortByTimeAscending(result);
+    });
   } catch (error) {
     console.log(error);
   }
-};
-
-getDiscussion();
+}
 
 function createKeywordContainer(keywords) {
   const keywordContainer = document.querySelector(".keyword-list");
@@ -73,20 +113,22 @@ function createKeywordContainer(keywords) {
 function createDiscussionCard(item) {
   const date = new Date(item.createdAt);
   const now = new Date();
-  const selisihWaktu = now - date;
-  var jam = Math.floor(
-    (selisihWaktu % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-  );
+  const timeDifferent = now.getTime() - date.getTime();
+  const minutes = Math.floor(timeDifferent / (1000 * 60));
 
   let timeText;
-  if (jam < 1) {
+  if (minutes < 1) {
     timeText = "Baru saja";
-  } else if (jam < 24) {
-    timeText = `${jam} jam yang lalu`;
-  } else if (jam > 24) {
-    timeText = `${jam / 24} hari yang lalu`;
+  } else if (minutes < 60) {
+    timeText = `${minutes} menit yang lalu`;
+  } else if (minutes >= 60 && minutes < 1440) {
+    timeText = `${Math.floor(minutes / 60)} jam yang lalu`;
+  } else if (minutes >= 1440 && minutes < 10080) {
+    timeText = `${Math.floor(minutes / 1440)} hari yang lalu`;
+  } else if (minutes >= 10080 && minutes < 43800) {
+    timeText = `${Math.floor(minutes / 10080)} minggu yang lalu`;
   } else {
-    timeText = `${jam / 168} minggu yang lalu`;
+    timeText = `${Math.floor(minutes / 43800)} bulan yang lalu`;
   }
 
   const container = document.createElement("div");
@@ -260,4 +302,25 @@ function createDiscussionCard(item) {
   container.appendChild(card);
 
   return container;
+}
+
+function sortByTimeAscending(result) {
+  discussionContainer.innerHTML = "";
+
+  result.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+  for (item of result) {
+    const container = createDiscussionCard(item);
+    discussionContainer.appendChild(container);
+  }
+}
+
+function sortByTimeDescending(result) {
+  discussionContainer.innerHTML = "";
+
+  result.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
+  for (item of result) {
+    const container = createDiscussionCard(item);
+    discussionContainer.appendChild(container);
+  }
 }
