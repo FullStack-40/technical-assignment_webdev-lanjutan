@@ -138,6 +138,10 @@ form svg {
   border-radius: 10px;
 }
 
+#detail-discussion img {
+  border-radius: 50%;
+}
+
 @media screen and (max-width: 768px) {
   section {
     padding: 1em 0;
