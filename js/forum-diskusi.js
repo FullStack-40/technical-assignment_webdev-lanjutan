@@ -64,13 +64,9 @@ async function getDiscussion() {
     const sort = localStorage.getItem("sort");
     const result = await data.json();
     if (sort === "newest") {
-      result.sort(
-        (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-      );
+      result.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     } else {
-      result.sort(
-        (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
-      );
+      result.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
     }
     let keywords = {};
 
@@ -157,7 +153,7 @@ function createDiscussionCard(item) {
 
   const description = document.createElement("a");
 
-  description.href = "./detail-diskusi.html";
+  description.href = "./detail-diskusi.html?" + item.id;
   description.className = "card-text text-decoration-none text-dark";
   description.textContent = item.description;
 
@@ -167,7 +163,7 @@ function createDiscussionCard(item) {
   const replyContainer = document.createElement("div");
   replyContainer.className = "reply-container";
   const replyWrapper = document.createElement("a");
-  replyWrapper.href = "./detail-diskusi.html";
+  replyWrapper.href = "./detail-diskusi.html?" + item.id;
   replyWrapper.innerHTML += `
         <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -184,7 +180,7 @@ function createDiscussionCard(item) {
       `;
 
   const replyTextWrapper = document.createElement("a");
-  replyTextWrapper.href = "./detail-diskusi.html";
+  replyTextWrapper.href = "./detail-diskusi.html?" + item.id;
   const replyText = document.createElement("p");
   replyText.className = "mb-0";
   replyText.textContent = "Balas";
