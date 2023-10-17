@@ -13,18 +13,21 @@ async function submit() {
   } else {
     try {
       const username = localStorage.getItem("username");
+      const avatar = localStorage.getItem("avatar");
       const createdAt = new Date().toISOString();
+      
       const response = await fetch(
         "https://652935bd55b137ddc83e6345.mockapi.io/discussion",
         {
           method: "POST",
 
-          body: JSON.stringify({ ...data, liked: 0, username, createdAt }),
+          body: JSON.stringify({ ...data, liked: 0, username, createdAt, avatar }),
           headers: {
             "Content-type": "application/json; charset=UTF-8",
           },
         }
       );
+
       if (response.status !== 201) {
         alert("Diskusi kamu gagal diunggah!");
         console.error(response);

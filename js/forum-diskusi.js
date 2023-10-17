@@ -1,5 +1,8 @@
 const discussionContainer = document.querySelector("#discussion-container");
-localStorage.setItem("avatar", "https://imgur.com/8d7uj9p.jpg")
+if (!localStorage.getItem("login")) {
+  localStorage.setItem("avatar", "https://imgur.com/8d7uj9p.jpg");
+}
+console.log(localStorage.getItem("login"));
 getDiscussion();
 
 async function getDiscussion() {
