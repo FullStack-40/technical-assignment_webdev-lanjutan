@@ -29,6 +29,7 @@ const getDiscussion = async () => {
 };
 
 getDiscussion();
+
 function createKeywordContainer(keywords) {
   const keywordContainer = document.querySelector(".keyword-list");
   for (let keyword in keywords) {
@@ -142,14 +143,9 @@ function createDiscussionCard(item) {
 
   const likeContainer = document.createElement("div");
   likeContainer.id = "like-container";
-  const inputLike = document.createElement("input");
-  inputLike.className = "visually-hidden";
-  inputLike.id = "like";
-  inputLike.name = "like";
-  inputLike.type = "checkbox";
 
   const likeWrapper = document.createElement("label");
-  likeWrapper.setAttribute("for", "like");
+  likeWrapper.htmlFor = "like-btn-" + item.id;
   likeWrapper.innerHTML += `
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -165,11 +161,61 @@ function createDiscussionCard(item) {
         />
       </svg>
       `;
-  const likeText = document.createElement("p");
-  likeText.style.marginBottom = 0;
-  likeText.textContent = item.liked;
 
-  likeContainer.append(inputLike, likeWrapper, likeText);
+  const likeBtn = document.createElement("input");
+  likeBtn.style.display = "none";
+  likeBtn.className = "like";
+  likeBtn.name = "like";
+  likeBtn.type = "checkbox";
+  likeBtn.id = "like-btn-" + item.id;
+
+  const likeCount = document.createElement("p");
+  likeCount.style.marginBottom = 0;
+  likeCount.textContent = item.liked;
+  likeCount.id = "like-count-" + item.id;
+
+  likeContainer.append(likeBtn, likeWrapper, likeCount);
+
+  likeBtn.addEventListener("click", async () => {
+    if (localStorage.getItem("login")) {
+      if (likeBtn.checked) {
+        likeCount.textContent = parseInt(likeCount.textContent) + 1;
+        likeWrapper.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+      <path d="M22.9328 13.1048C23.4015 12.4854 23.661 11.7264 23.661 10.9368C23.661 9.68403 22.9607 8.49821 21.8335 7.83693C21.5433 7.66672 21.2129 7.57714 20.8764 7.57745H14.1856L14.353 4.14832C14.3921 3.31964 14.0991 2.53281 13.5299 1.93292C13.2506 1.63724 12.9135 1.40198 12.5397 1.24169C12.1659 1.0814 11.7631 0.999484 11.3563 1.001C9.90545 1.001 8.62197 1.97756 8.23692 3.37544L5.84016 12.0529H2.23246C1.7386 12.0529 1.3396 12.4519 1.3396 12.9458V23.102C1.3396 23.5959 1.7386 23.9949 2.23246 23.9949H19.0098C19.2665 23.9949 19.5176 23.9446 19.7492 23.8442C21.0773 23.2778 21.9339 21.9804 21.9339 20.5406C21.9339 20.1891 21.8837 19.8431 21.7832 19.5083C22.252 18.8888 22.5115 18.1299 22.5115 17.3403C22.5115 16.9887 22.4613 16.6427 22.3608 16.3079C22.8296 15.6885 23.089 14.9296 23.089 14.1399C23.0835 13.7884 23.0332 13.4396 22.9328 13.1048V13.1048ZM3.34853 21.9859V14.0618H5.60857V21.9859H3.34853ZM21.1052 12.1366L20.4942 12.6667L20.882 13.3754C21.0098 13.6089 21.076 13.871 21.0745 14.1372C21.0745 14.5975 20.8736 15.0356 20.5277 15.3369L19.9166 15.8671L20.3044 16.5758C20.4322 16.8092 20.4985 17.0714 20.497 17.3375C20.497 17.7979 20.2961 18.2359 19.9501 18.5373L19.339 19.0674L19.7269 19.7761C19.8547 20.0096 19.9209 20.2717 19.9194 20.5378C19.9194 21.1628 19.5511 21.7264 18.9819 21.9831H7.39429V13.9725L10.1705 3.91394C10.2421 3.65613 10.3958 3.42868 10.6082 3.26605C10.8207 3.10343 11.0804 3.01449 11.348 3.01272C11.56 3.01272 11.7693 3.0741 11.9367 3.19966C12.2129 3.40613 12.3608 3.71863 12.3441 4.05066L12.0762 9.58638H20.8485C21.3452 9.89051 21.6521 10.4039 21.6521 10.9368C21.6521 11.3972 21.4512 11.8325 21.1052 12.1366Z" fill="#49A078"/>
+    </svg>
+      `;
+
+        item.liked += 1;
+        await fetch(
+          "https://652935bd55b137ddc83e6345.mockapi.io/discussion/" + item.id,
+          {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(item),
+          }
+        );
+      } else {
+        likeCount.textContent = parseInt(likeCount.textContent) - 1;
+        likeWrapper.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none">
+      <path d="M22.9328 13.1048C23.4015 12.4854 23.661 11.7264 23.661 10.9368C23.661 9.68403 22.9607 8.49821 21.8335 7.83693C21.5433 7.66672 21.2129 7.57714 20.8764 7.57745H14.1856L14.353 4.14832C14.3921 3.31964 14.0991 2.53281 13.5299 1.93292C13.2506 1.63724 12.9135 1.40198 12.5397 1.24169C12.1659 1.0814 11.7631 0.999484 11.3563 1.001C9.90545 1.001 8.62197 1.97756 8.23692 3.37544L5.84016 12.0529H2.23246C1.7386 12.0529 1.3396 12.4519 1.3396 12.9458V23.102C1.3396 23.5959 1.7386 23.9949 2.23246 23.9949H19.0098C19.2665 23.9949 19.5176 23.9446 19.7492 23.8442C21.0773 23.2778 21.9339 21.9804 21.9339 20.5406C21.9339 20.1891 21.8837 19.8431 21.7832 19.5083C22.252 18.8888 22.5115 18.1299 22.5115 17.3403C22.5115 16.9887 22.4613 16.6427 22.3608 16.3079C22.8296 15.6885 23.089 14.9296 23.089 14.1399C23.0835 13.7884 23.0332 13.4396 22.9328 13.1048V13.1048ZM3.34853 21.9859V14.0618H5.60857V21.9859H3.34853ZM21.1052 12.1366L20.4942 12.6667L20.882 13.3754C21.0098 13.6089 21.076 13.871 21.0745 14.1372C21.0745 14.5975 20.8736 15.0356 20.5277 15.3369L19.9166 15.8671L20.3044 16.5758C20.4322 16.8092 20.4985 17.0714 20.497 17.3375C20.497 17.7979 20.2961 18.2359 19.9501 18.5373L19.339 19.0674L19.7269 19.7761C19.8547 20.0096 19.9209 20.2717 19.9194 20.5378C19.9194 21.1628 19.5511 21.7264 18.9819 21.9831H7.39429V13.9725L10.1705 3.91394C10.2421 3.65613 10.3958 3.42868 10.6082 3.26605C10.8207 3.10343 11.0804 3.01449 11.348 3.01272C11.56 3.01272 11.7693 3.0741 11.9367 3.19966C12.2129 3.40613 12.3608 3.71863 12.3441 4.05066L12.0762 9.58638H20.8485C21.3452 9.89051 21.6521 10.4039 21.6521 10.9368C21.6521 11.3972 21.4512 11.8325 21.1052 12.1366Z" fill="black" fill-opacity="0.85"/>
+    </svg>
+      `;
+        item.liked -= 1;
+        await fetch(
+          "https://652935bd55b137ddc83e6345.mockapi.io/discussion/" + item.id,
+          {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(item),
+          }
+        );
+      }
+    }
+
+    likeCount.textContent = parseInt(likeCount.textContent);
+  });
 
   shareTextWrapper.append(shareText);
   shareContainer.append(shareWrapper, shareTextWrapper);
