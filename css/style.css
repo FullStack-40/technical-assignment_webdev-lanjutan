@@ -81,11 +81,11 @@ body {
   font-size: 1.1em;
 }
 
-.card {
+#advantages .card {
   background-color: #49a078;
 }
 
-.card-icons {
+#advantages .card-icons {
   width: 80px;
   height: 80px;
   background-color: #fff;
@@ -282,7 +282,7 @@ address {
     margin-bottom: 1em;
   }
 
-  .card {
+  #advantages .card {
     width: 90%;
     margin: 0 auto;
   }
