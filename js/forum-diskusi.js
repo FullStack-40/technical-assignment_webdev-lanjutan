@@ -1,7 +1,37 @@
 const getDiscussion = async () => {
   const discussionContainer = document.querySelector("#discussion-container");
 
+  const searchDiscussion = document.getElementById("search-discussion");
+  searchDiscussion.addEventListener("input", async () => {
+    const url = new URL(
+      "https://652935bd55b137ddc83e6345.mockapi.io/discussion"
+    );
+    url.searchParams.append("description", searchDiscussion.value);
+
+    try {
+      const response = await fetch(url, {
+        method: "GET",
+        headers: { "content-type": "application/json" },
+      });
+
+      if (response.ok) {
+        const discussions = await response.json();
+
+        discussionContainer.innerHTML = "";
+        for (item of discussions) {
+          const container = createDiscussionCard(item);
+          discussionContainer.appendChild(container);
+        }
+      } else {
+        console.error(response.status);
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  });
+
   try {
+    discussionContainer.innerHTML = "";
     const data = await fetch(
       "https://652935bd55b137ddc83e6345.mockapi.io/discussion",
       {
