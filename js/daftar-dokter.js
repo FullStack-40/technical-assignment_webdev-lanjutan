@@ -1,4 +1,18 @@
-createDoctorCard();
+const doctorsContainer = document.getElementById("doctors-container");
+
+getDoctors()
+  .then((data) => {
+    document.querySelector("#cheapest").addEventListener("click", () => {
+      sortByPriceDescending(data);
+    });
+
+    document.querySelector("#most-expensive").addEventListener("click", () => {
+      sortByPriceAscending(data);
+    });
+
+    createDoctorCard(data);
+  })
+  .catch((error) => console.error(error));
 
 async function getDoctors() {
   try {
@@ -12,19 +26,16 @@ async function getDoctors() {
   }
 }
 
-async function createDoctorCard() {
-  try {
-    const doctors = await getDoctors();
-    doctors.map((doctor) => {
-      const doctorsContainer = document.getElementById("doctors-container");
-      doctorsContainer.innerHTML += `
+function createDoctorCard(doctors) {
+  doctors.map((doctor) => {
+    doctorsContainer.innerHTML += `
     <div class="col">
-    <div class="card h-100 border-light" style="width: 20rem">
+    <div class="card" style="width: 20rem">
     <img src=${doctor.imageURL} class="card-img-top" alt=${doctor.name} />
-    <div class="card-body px-0">
+    <div class="card-body px-2">
         <h4 class="card-title">${doctor.name}</h4>
         <h6><i>${doctor.specialist}</i></h6>
-        <div class="card-text d-flex justify-content-around mx-3 my-4">
+        <div class="card-text d-flex justify-content-between mx-3 my-4">
         <div
             class="d-flex gap-2 rounded align-items-center justify-content-center"
             style="
@@ -87,8 +98,61 @@ async function createDoctorCard() {
     </div>
     </div>
     `;
+  });
+}
+
+const searchDoctor = document.getElementById("search-doctor");
+
+searchDoctor.addEventListener("input", async () => {
+  const url = new URL("https://652935bd55b137ddc83e6345.mockapi.io/doctors");
+  url.searchParams.append("name", searchDoctor.value);
+
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { "content-type": "application/json" },
     });
+
+    if (response.ok) {
+      const sort = localStorage.getItem("sort");
+      const result = await response.json();
+      if (sort === "newest") {
+        result.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      } else {
+        result.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+      }
+
+      document.querySelector("#cheapest").addEventListener("click", () => {
+        sortByPriceDescending(result);
+      });
+
+      document
+        .querySelector("#most-expensive")
+        .addEventListener("click", () => {
+          sortByPriceAscending(result);
+        });
+
+      doctorsContainer.innerHTML = "";
+      console.log(result);
+      createDoctorCard(result);
+    } else {
+      console.error(response.status);
+    }
   } catch (error) {
     console.error(error);
   }
+});
+
+function sortByPriceAscending(result) {
+  doctorsContainer.innerHTML = "";
+
+  result.sort((a, b) => b.price - a.price);
+  createDoctorCard(result);
+}
+
+function sortByPriceDescending(result) {
+  doctorsContainer.innerHTML = "";
+
+  result.sort((a, b) => a.price - b.price);
+  createDoctorCard(result);
 }
