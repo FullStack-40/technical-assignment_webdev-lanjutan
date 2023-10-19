@@ -1,0 +1,110 @@
+section {
+  padding: 1em 8em;
+  margin-top: 8em;
+}
+
+#doctor-list h1 {
+  font-size: 28px;
+  margin-bottom: 0.5em;
+}
+
+#doctor-list span {
+  color: #49a078;
+}
+
+#doctor-list h5 {
+  font-size: 18px;
+}
+
+.card span {
+  font-size: 16px;
+}
+
+.card h6 {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+#doctor-list .card h5 {
+  font-size: 20px;
+}
+
+#doctor-list .card a {
+  font-size: 18px;
+}
+
+#doctors-container > .col {
+  margin-top: 3em;
+}
+
+footer {
+  padding: 1rem;
+}
+
+footer #copyright {
+  font-size: 14px;
+}
+
+/* detail dokter */
+#detail-doctor h1 {
+  font-size: 28px;
+  margin-bottom: 1em;
+}
+
+#detail-doctor h3 {
+  font-size: 24px;
+}
+
+#detail-doctor #info {
+  font-size: 16px;
+}
+
+#detail-doctor #info span {
+  color: #49a078;
+}
+
+#detail-doctor #info div {
+  background-color: #d3ffd8;
+}
+
+#detail-doctor h5 {
+  font-size: 18px;
+  margin-bottom: 0;
+  margin-top: 1em;
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    padding: 1em 0;
+    margin-top: 6em;
+  }
+
+  #doctor-list h1 {
+    font-size: 20px;
+    margin-bottom: 0.5em;
+  }
+
+  #doctor-list h5 {
+    font-size: 16px;
+  }
+
+  #doctor-list .card {
+    margin: 0 auto 2em;
+  }
+
+  footer {
+    padding: 0.1rem;
+  }
+
+  .doctor-card {
+    flex-direction: column;
+  }
+
+  .doctor-card img {
+    width: 350px;
+    margin-bottom: 2em;
+  }
+
+  #time-select option {
+    font-size: 14px;
+  }
+}
