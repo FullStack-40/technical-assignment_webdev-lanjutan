@@ -36,7 +36,7 @@ footer #copyright {
 
 @media screen and (max-width: 768px) {
   section {
-    padding: 1em 0;
+    padding: 1em 1em;
     margin-top: 6em;
   }
 

@@ -50,11 +50,11 @@ function createDetailDoctorCard(data) {
   const start = 8;
   const end = 17;
   detailDoctor.innerHTML = `
-            <div class="d-flex align-items-center doctor-card">
-            <div class="col-lg-4">
+        <div class="d-flex align-items-center gap-3 doctor-card">
+          <div>
             <img src=${data.imageURL} alt="" width="400" class="rounded" />
-            </div>
-            <div class="col-lg-8">
+          </div>
+          <div id="profil-doctor">
             <h1>Profil Dokter</h1>
             <div>
                 <h3>${data.name}</h3>
