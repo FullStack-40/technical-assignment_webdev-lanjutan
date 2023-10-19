@@ -29,7 +29,7 @@ bookButton.addEventListener("click", () => {
 
     localStorage.setItem("bookingInfo", JSON.stringify(bookingInfo));
 
-    window.location.href = "./payment.html";
+    window.location.href = "../payment/verification.html";
   }
 });
 
