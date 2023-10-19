@@ -1,0 +1,72 @@
+section {
+  padding: 1em 8em;
+  margin-top: 6em;
+}
+
+#detail-booking .back {
+  background-color: #fff;
+}
+
+#detail-booking .back:hover {
+  background-color: #49a078;
+}
+
+#detail-booking h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+#status h2 {
+  font-size: 28px;
+}
+
+#status h4,
+#status .btn {
+  font-size: 20px;
+}
+
+footer {
+  padding: 1rem;
+}
+
+footer #copyright {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 768px) {
+  section {
+    padding: 1em 0;
+    margin-top: 6em;
+  }
+
+  #detail-booking h2 {
+    font-size: 20px;
+  }
+
+  #detail-booking h5 {
+    font-size: 18px;
+  }
+
+  #payment-method {
+    font-size: 16px;
+  }
+
+  #payment-method option {
+    font-size: 12px;
+  }
+
+  #status h2 {
+    font-size: 24px;
+  }
+
+  #status h4,
+  #status h5,
+  #status .btn {
+    font-size: 18px;
+  }
+
+  footer {
+    padding: 0.1rem;
+  }
+}
