@@ -17,7 +17,7 @@ bookButton.addEventListener("click", () => {
   } else {
     const bookingData = getbookingData();
 
-    if (!bookingData.date || !bookingData.time) {
+    if (!bookingData.date || bookingData.time === "none") {
       alert("Tolong lengkapi jadwal!");
       return;
     }
