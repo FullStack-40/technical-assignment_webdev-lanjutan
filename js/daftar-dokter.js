@@ -91,7 +91,9 @@ function createDoctorCard(doctors) {
             class="col d-flex justify-content-around align-items-end"
         >
             <h5 class="fw-semibold">Rp. ${(doctor.price / 1000).toFixed(3)}</h5>
-            <a href="#" class="btn btn-success px-4 py-2">Konsultasi</a>
+            <a href="./detail-dokter.html?${
+              doctor.id
+            }" class="btn btn-success px-4 py-2">Konsultasi</a>
         </div>
         </div>
     </div>
