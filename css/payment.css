@@ -17,6 +17,15 @@ section {
   margin-bottom: 1em;
 }
 
+#status h2 {
+  font-size: 28px;
+}
+
+#status h4,
+#status .btn {
+  font-size: 20px;
+}
+
 footer {
   padding: 1rem;
 }
@@ -45,6 +54,16 @@ footer #copyright {
 
   #payment-method option {
     font-size: 12px;
+  }
+
+  #status h2 {
+    font-size: 24px;
+  }
+
+  #status h4,
+  #status h5,
+  #status .btn {
+    font-size: 18px;
   }
 
   footer {
