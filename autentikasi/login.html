@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Halaman Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!-- link CSS -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/autentikasi/login.css" />
+  </head>
+  <body>
+    <section class="login-pertama">
+      <div class="header">
+        <img
+          src="../img/autentikasi/life-well-logo__transparance 1.png"
+          alt=""
+        /><br /><br />
+        <p>Masuk</p>
+
+        <div class="login-form">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="masukkan alamat email"
+          />
+
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="masukkan kata sandi"
+          />
+          <a href="./reset-password.html" class="text-decoration-none"
+            >Lupa password?</a
+          ><br />
+          <button class="signin">Masuk</button>
+          <p>--------------or-------------</p>
+          <button class="signin-google">
+            <img src="../img/autentikasi/Group.jpg" alt="" />
+            Masuk dengan Google</button
+          ><br />
+
+          <span class="d-inline"
+            >Belum punya akun?
+            <a href="./register.html" class="d-inline text-decoration-none"
+              >Daftar</a
+            ></span
+          >
+        </div>
+      </div>
+    </section>
+    <script type="module" src="../js/autentikasi/login.js"></script>
+  </body>
+</html>
