@@ -14,9 +14,15 @@ signInButton.addEventListener("click", async function () {
       user[0].email == email &&
       user[0].password == password
     ) {
+      const dataUser = {
+        id: user[0].id,
+        name: user[0].name,
+        avatar: user[0].avatar,
+      };
+
+      localStorage.setItem("user", JSON.stringify(dataUser));
       localStorage.setItem("login", true);
-      localStorage.setItem("username", user[0].username);
-      localStorage.setItem("avatar", user[0].avatar);
+
       alert("Login berhasil");
       window.location.href = "../index.html";
       return;
@@ -24,9 +30,8 @@ signInButton.addEventListener("click", async function () {
       alert("Login gagal. Email atau password salah!.");
       return;
     }
-
-    alert("Login berhasil");
   } else {
     alert("Login gagal. Periksa email dan kata sandi Anda.");
   }
 });
+

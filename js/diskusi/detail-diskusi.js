@@ -31,13 +31,12 @@ async function submit(data) {
   } else {
     const createdAt = new Date();
     const replyContainer = document.getElementById("reply-container");
-    const username = localStorage.getItem("username");
-    const avatar = localStorage.getItem("avatar");
+    const { name, avatar } = JSON.parse(localStorage.getItem("user"));
     const timeText = getTime({ createdAt });
 
     const comments = [
       ...data.comments,
-      { avatar, username, comment: reply, createdAt },
+      { avatar, username: name, comment: reply, createdAt },
     ];
 
     await fetch(
@@ -52,8 +51,8 @@ async function submit(data) {
     replyContainer.innerHTML += `
     <div class="row">
     <div class="header d-flex align-items-center mb-3">
-      <img alt="${username}" width="35" src=${avatar} />
-      <h3 class="card-title mb-0 mx-3">${username}</h3>
+      <img alt="${name}" width="35" src=${avatar} />
+      <h3 class="card-title mb-0 mx-3">${name}</h3>
       <h6 class="mb-0">${timeText}</h6>
     </div>
     <div class="card-text">
@@ -194,15 +193,14 @@ function createQuestionContainer(data) {
 }
 
 function createReplyContainer() {
-  const username = localStorage.getItem("username");
-  const avatar = localStorage.getItem("avatar");
+  const { name, avatar } = JSON.parse(localStorage.getItem("user"));
 
   const replyHeader = document.getElementById("reply-header");
 
   replyHeader.innerHTML = `
   <div class="header d-flex align-items-center mb-3">
-    <img alt="${username}" width="35" src=${avatar ? avatar : ""} />
-    <h3 class="card-title mb-0 mx-3">${username ? username : "Stranger"}</h3>
+    <img alt="${name}" width="35" src=${avatar ? avatar : ""} />
+    <h3 class="card-title mb-0 mx-3">${name ? name : "Stranger"}</h3>
   </div>
   `;
 }

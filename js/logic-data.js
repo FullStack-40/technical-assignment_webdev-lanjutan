@@ -78,6 +78,7 @@ async function addUser(data) {
 }
 
 async function updateUser(id, data) {
+  alert("Data berhasil diupdate");
   const url = "https://6532406c4d4c2e3f333dd8e3.mockapi.io/users/" + id;
   await fetch(url, {
     method: "PUT",
