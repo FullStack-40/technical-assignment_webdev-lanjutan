@@ -33,7 +33,7 @@ if (isLogin) {
   `;
 } else {
   navBtn.innerHTML = `
-    <a href="#" type="button" class="btn text-light py-2 px-4">Masuk</a>
+    <a href="../autentikasi/login.html" type="button" class="btn text-light py-2 px-4">Masuk</a>
   `;
 }
 
