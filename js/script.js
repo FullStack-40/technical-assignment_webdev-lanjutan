@@ -14,7 +14,7 @@ const isLogin = localStorage.getItem("login");
 
 if (isLogin) {
   const user = JSON.parse(localStorage.getItem("user"));
-  
+
   navBtn.innerHTML = `
   <div class="btn-group">
     <button type="button" class="btn btn-success dropdown-toggle d-flex align-items-center gap-2" data-bs-toggle="dropdown" aria-expanded="false" 
@@ -42,5 +42,6 @@ function logout() {
   localStorage.removeItem("login");
   localStorage.removeItem("user");
   localStorage.removeItem("bookingInfo");
+  localStorage.removeItem("consultationSchedule");
   window.location.href = "../index.html";
 }
