@@ -25,6 +25,13 @@ funds.textContent = `Rp. ${((bookingInfo.doctor.price + 10000) / 1000).toFixed(
   3
 )}`;
 
+const nextBtn = document.querySelector(".next-btn");
+nextBtn.addEventListener("click", () => {
+  console.log("clicked");
+
+  window.location.href = "../konsultasi/daftar-konsultasi.html";
+});
+
 function generateRandomString() {
   const currentTimestamp = Math.floor(new Date().getTime() / 1000);
 
