@@ -459,3 +459,15 @@ address {
     font-size: 0.9em;
   }
 }
+
+@media screen and (max-width: 576px) {
+  .hero-image #circle {
+    width: 65vw;
+    height: 65vw;
+  }
+
+  #advantages .card {
+    width: 90%;
+    height: 35vh;
+  }
+}
