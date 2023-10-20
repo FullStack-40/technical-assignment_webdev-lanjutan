@@ -1,0 +1,83 @@
+section {
+  padding: 1em 8em;
+}
+
+#daftar-konsultasi {
+  margin-top: 8em;
+}
+
+#daftar-konsultasi h1 {
+  font-size: 28px;
+  margin-bottom: 0.5em;
+}
+
+#daftar-konsultasi span {
+  color: #49a078;
+}
+
+#daftar-konsultasi img {
+  border-radius: 50%;
+}
+
+#daftar-konsultasi h3 {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+#daftar-konsultasi h5 {
+  font-size: 16px;
+  color: #898989;
+  margin-bottom: 0;
+}
+
+#daftar-konsultasi #date p {
+  margin-bottom: 0;
+}
+
+#daftar-konsultasi .pesan-btn {
+  background-color: #fff;
+  color: #49a078;
+}
+
+#daftar-konsultasi .pesan-btn:hover {
+  color: #fff;
+  background-color: #49a078;
+}
+
+footer {
+  padding: 0.1rem;
+}
+
+footer #copyright {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 992px) {
+  section {
+    padding: 1em 1em;
+  }
+
+  #daftar-konsultasi {
+    margin-top: 6em;
+  }
+
+  #daftar-konsultasi h1 {
+    font-size: 24px;
+  }
+
+  #daftar-konsultasi .card-body {
+    gap: 2em;
+  }
+
+  #daftar-konsultasi h3 {
+    font-size: 16px;
+  }
+  #daftar-konsultasi h5 {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #daftar-konsultasi .card-body {
+    gap: 1em;
+  }
+}
