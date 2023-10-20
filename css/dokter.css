@@ -28,6 +28,8 @@ section {
 
 #doctor-list .card-text {
   margin: 0 1em;
+  display: flex;
+  justify-content: space-between;
 }
 
 #doctor-list .card span {
@@ -63,6 +65,9 @@ section {
 
 #detail-doctor #info {
   font-size: 16px;
+  display: flex;
+  gap: 2em;
+  align-items: center;
 }
 
 #detail-doctor #info span {
@@ -140,6 +145,10 @@ footer #copyright {
     font-size: 20px;
   }
 
+  #profil-doctor #info {
+    flex-wrap: wrap;
+  }
+
   .doctor-card img {
     margin-bottom: 2em;
   }
@@ -213,9 +222,19 @@ footer #copyright {
 }
 
 @media screen and (max-width: 600px) {
+  #doctor-list .card {
+    margin: 0 auto 2em;
+    width: 80vw;
+  }
+
+  #doctor-list .card-text {
+    display: flex;
+    justify-content: space-around;
+  }
+
   #doctor-list .card-info {
-    width: 25vw;
-    height: 6vh;
+    width: 30vw;
+    height: 5vh;
   }
 
   #doctor-list .card span {

@@ -48,7 +48,7 @@ function createDetailDoctorCard(data) {
             <h1>Profil Dokter</h1>
             <div>
                 <h3>${data.name}</h3>
-                <div class="d-flex gap-3 align-items-center mb-3" id="info">
+                <div class="mb-3" id="info">
                     <span>${data.specialist}</span>
                     <div class="px-3 py-1 rounded">
                         <svg
@@ -94,7 +94,9 @@ function createDetailDoctorCard(data) {
                     </svg>
                     <span>${data.rating}</span>
                 </div>
-                <h3>Rp. ${(data.price / 1000).toFixed(3)}</h3>
+                <h3 class="fw-semibold">Rp. ${(data.price / 1000).toFixed(
+                  3
+                )}</h3>
                 </div>
                 <p>${data.description}</p>
                 <div>

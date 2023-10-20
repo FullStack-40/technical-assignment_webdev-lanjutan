@@ -25,7 +25,7 @@ function createDoctorCard(doctors) {
     <div class="card-body px-2">
         <h4 class="card-title">${doctor.name}</h4>
         <h6><i>${doctor.specialist}</i></h6>
-        <div class="card-text d-flex justify-content-between my-4">
+        <div class="card-text my-4">
         <div
             class="d-flex gap-2 rounded align-items-center justify-content-center card-info">
             <svg

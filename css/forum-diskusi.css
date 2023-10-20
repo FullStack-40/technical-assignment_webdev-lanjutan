@@ -167,7 +167,7 @@ footer #copyright {
   #forum-diskusi .square {
     margin: 0 auto;
     margin-bottom: 2em;
-    width: 30vw;
+    width: 50vw;
   }
 }
 
@@ -190,10 +190,8 @@ footer #copyright {
   }
 
   #forum-diskusi .square {
-    width: 93%;
     margin: 0 auto;
     margin-bottom: 1em;
-    width: 40vw;
   }
 
   #forum-diskusi .square > div {
@@ -225,5 +223,13 @@ footer #copyright {
 
   #reply-container .row {
     margin: 1em 0.1em;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #forum-diskusi .square {
+    margin: 0 auto;
+    margin-bottom: 1em;
+    width: 80vw;
   }
 }
