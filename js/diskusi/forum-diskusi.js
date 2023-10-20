@@ -1,55 +1,44 @@
+import { getDiscussion } from "../logic-data.js";
+
 const discussionContainer = document.querySelector("#discussion-container");
 if (!localStorage.getItem("login")) {
   localStorage.setItem("avatar", "https://imgur.com/8d7uj9p.jpg");
 }
-console.log(localStorage.getItem("login"));
-getDiscussion();
 
-async function getDiscussion() {
+createDiscussion();
+
+async function createDiscussion() {
   const searchDiscussion = document.getElementById("search-discussion");
   searchDiscussion.addEventListener("input", async () => {
-    const url = new URL(
-      "https://652935bd55b137ddc83e6345.mockapi.io/discussion"
-    );
-    url.searchParams.append("description", searchDiscussion.value);
-
     try {
-      const response = await fetch(url, {
-        method: "GET",
-        headers: { "content-type": "application/json" },
+      const discussions = await getDiscussion(searchDiscussion.value);
+      const sort = localStorage.getItem("sort");
+
+      if (sort === "newest") {
+        discussions.sort(
+          (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
+        );
+      } else {
+        discussions.sort(
+          (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
+        );
+      }
+
+      document.querySelector(".newest").addEventListener("click", () => {
+        localStorage.setItem("sort", "newest");
+        sortByTimeDescending(discussions);
       });
 
-      if (response.ok) {
-        const sort = localStorage.getItem("sort");
-        const discussions = await response.json();
-        if (sort === "newest") {
-          discussions.sort(
-            (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
-          );
-        } else {
-          discussions.sort(
-            (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
-          );
-        }
+      document.querySelector(".oldest").addEventListener("click", () => {
+        localStorage.setItem("sort", "oldest");
+        sortByTimeAscending(discussions);
+      });
 
-        document.querySelector(".newest").addEventListener("click", () => {
-          localStorage.setItem("sort", "newest");
-          sortByTimeDescending(discussions);
-        });
-
-        document.querySelector(".oldest").addEventListener("click", () => {
-          localStorage.setItem("sort", "oldest");
-          sortByTimeAscending(discussions);
-        });
-
-        discussionContainer.innerHTML = "";
-        for (item of discussions) {
-          const container = createDiscussionCard(item);
-          discussionContainer.appendChild(container);
-        }
-      } else {
-        console.error(response.status);
-      }
+      discussionContainer.innerHTML = "";
+      discussions.map((item) => {
+        const container = createDiscussionCard(item);
+        discussionContainer.appendChild(container);
+      });
     } catch (error) {
       console.error(error);
     }
@@ -57,23 +46,18 @@ async function getDiscussion() {
 
   try {
     discussionContainer.innerHTML = "";
-    const data = await fetch(
-      "https://652935bd55b137ddc83e6345.mockapi.io/discussion",
-      {
-        method: "GET",
-      }
-    );
-
     const sort = localStorage.getItem("sort");
-    const result = await data.json();
+    const result = await getDiscussion();
+
     if (sort === "newest") {
       result.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
     } else {
       result.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
     }
+
     let keywords = {};
 
-    for (item of result) {
+    for (let item of result) {
       if (item.keyword in keywords) {
         keywords[item.keyword] += 1;
       } else {
@@ -307,10 +291,10 @@ function sortByTimeAscending(result) {
   discussionContainer.innerHTML = "";
 
   result.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
-  for (item of result) {
+  result.map((item) => {
     const container = createDiscussionCard(item);
     discussionContainer.appendChild(container);
-  }
+  });
 }
 
 function sortByTimeDescending(result) {
@@ -318,8 +302,8 @@ function sortByTimeDescending(result) {
 
   result.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
-  for (item of result) {
+  result.map((item) => {
     const container = createDiscussionCard(item);
     discussionContainer.appendChild(container);
-  }
+  });
 }

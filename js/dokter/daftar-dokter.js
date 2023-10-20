@@ -1,3 +1,5 @@
+import { getDoctors } from "../logic-data.js";
+
 const doctorsContainer = document.getElementById("doctors-container");
 
 getDoctors()
@@ -13,18 +15,6 @@ getDoctors()
     createDoctorCard(data);
   })
   .catch((error) => console.error(error));
-
-async function getDoctors() {
-  try {
-    const response = await fetch(
-      "https://652935bd55b137ddc83e6345.mockapi.io/doctors"
-    );
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
-}
 
 function createDoctorCard(doctors) {
   doctors.map((doctor) => {
@@ -94,40 +84,26 @@ function createDoctorCard(doctors) {
 const searchDoctor = document.getElementById("search-doctor");
 
 searchDoctor.addEventListener("input", async () => {
-  const url = new URL("https://652935bd55b137ddc83e6345.mockapi.io/doctors");
-  url.searchParams.append("name", searchDoctor.value);
-
   try {
-    const response = await fetch(url, {
-      method: "GET",
-      headers: { "content-type": "application/json" },
+    const result = await getDoctors(searchDoctor.value);
+    const sort = localStorage.getItem("sort");
+
+    if (sort === "newest") {
+      result.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+    } else {
+      result.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
+    }
+
+    document.querySelector("#cheapest").addEventListener("click", () => {
+      sortByPriceDescending(result);
     });
 
-    if (response.ok) {
-      const sort = localStorage.getItem("sort");
-      const result = await response.json();
-      if (sort === "newest") {
-        result.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-      } else {
-        result.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt));
-      }
+    document.querySelector("#most-expensive").addEventListener("click", () => {
+      sortByPriceAscending(result);
+    });
 
-      document.querySelector("#cheapest").addEventListener("click", () => {
-        sortByPriceDescending(result);
-      });
-
-      document
-        .querySelector("#most-expensive")
-        .addEventListener("click", () => {
-          sortByPriceAscending(result);
-        });
-
-      doctorsContainer.innerHTML = "";
-      console.log(result);
-      createDoctorCard(result);
-    } else {
-      console.error(response.status);
-    }
+    doctorsContainer.innerHTML = "";
+    createDoctorCard(result);
   } catch (error) {
     console.error(error);
   }

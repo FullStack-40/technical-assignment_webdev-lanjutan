@@ -1,3 +1,28 @@
+import { getDiscussionById } from "../logic-data.js";
+
+const button = document.querySelector("#button button");
+
+const id = window.location.search.split("?")[1];
+getDiscussionById(id)
+  .then((data) => {
+    createQuestionContainer(data);
+    createCommentContainer(data);
+
+    button.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (localStorage.getItem("login")) {
+        submit(data);
+      } else {
+        alert("Anda harus login terlebih dahulu!");
+      }
+    });
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+createReplyContainer();
+
 async function submit(data) {
   const reply = document.querySelector(".reply").value;
 
@@ -41,26 +66,6 @@ async function submit(data) {
   }
 }
 
-const button = document.querySelector("#button button");
-
-const id = window.location.search.split("?")[1];
-const data = getDetailDiskusi()
-  .then((data) => {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
-      if (localStorage.getItem("login")) {
-        submit(data);
-      } else {
-        alert("Anda harus login terlebih dahulu!");
-      }
-    });
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-
-createReplyContainer();
-
 function getTime(item) {
   const date = new Date(item.createdAt);
   const now = new Date();
@@ -83,20 +88,6 @@ function getTime(item) {
   }
 
   return timeText;
-}
-
-async function getDetailDiskusi() {
-  try {
-    const url = "https://652935bd55b137ddc83e6345.mockapi.io/discussion/" + id;
-    const response = await fetch(url);
-    const data = await response.json();
-
-    createQuestionContainer(data);
-    createCommentContainer(data);
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
 }
 
 function createQuestionContainer(data) {
@@ -219,7 +210,7 @@ function createReplyContainer() {
 function createCommentContainer(data) {
   const comment = document.getElementById("reply-container");
 
-  for (item of data.comments) {
+  data.comments.map((item) => {
     const timeText = getTime(item);
     comment.innerHTML += `
     <div class="row">
@@ -231,5 +222,5 @@ function createCommentContainer(data) {
       <div class="card-text">${item.comment}</div>
     </div>
   `;
-  }
+  });
 }

@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/dokter.css" />
     <script src="../js/script.js" defer></script>
-    <script src="../js/daftar-dokter.js" defer></script>
+    <script type="module" src="../js/dokter/daftar-dokter.js" defer></script>
   </head>
   <body>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top nav-custom">
@@ -131,8 +131,14 @@
                   </svg>
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#" id="cheapest">Termurah</a></li>
-                  <li><a class="dropdown-item" href="#" id="most-expensive">Termahal</a></li>
+                  <li>
+                    <a class="dropdown-item" href="#" id="cheapest">Termurah</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" id="most-expensive"
+                      >Termahal</a
+                    >
+                  </li>
                 </ul>
               </div>
             </div>

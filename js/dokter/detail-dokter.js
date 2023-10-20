@@ -1,7 +1,9 @@
+import { getDetailDoctor } from "../logic-data.js";
+
 const id = window.location.href.split("?")[1];
 let doctorData = {};
 
-const doctor = getDetailDoctor(id)
+getDetailDoctor(id)
   .then((data) => {
     doctorData = data;
     createDetailDoctorCard(data);
@@ -22,7 +24,7 @@ bookButton.addEventListener("click", () => {
       return;
     }
 
-    bookingInfo = {
+    let bookingInfo = {
       ...bookingData,
       doctor: doctorData,
     };
@@ -32,18 +34,6 @@ bookButton.addEventListener("click", () => {
     window.location.href = "../payment/verification.html";
   }
 });
-
-async function getDetailDoctor(id) {
-  try {
-    const response = await fetch(
-      `https://652935bd55b137ddc83e6345.mockapi.io/doctors/${id}`
-    );
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
-  }
-}
 
 function createDetailDoctorCard(data) {
   const detailDoctor = document.getElementById("detail-doctor-container");
