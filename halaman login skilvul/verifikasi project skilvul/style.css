@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.verifikasi {
+    width: 100%;
+    height: 100vh;
+    background-color: #DCE1DE;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.text-hero {
+    margin-top: 30px;
+}
+
+.otp-field {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 70px;
+}
+
+.otp-field input {
+    width: 50px;
+    height: 40px;
+    font-size: 1.5rem;
+    margin: 0 1rem 0 0;
+    border-radius: 0.5rem;
+    text-align: center;
+    border: none;
+    box-shadow: -4px 3px 10px 0px;
+}
+
+.otp-field input:nth-child(3) {
+    margin: 0 3rem 0 0;
+}
+
+.btn {
+    margin-top: 100px;
+}
+
+.btn button {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 90px;
+    padding-right: 90px;
+    border-radius: 5px;
+    border-style: none;
+    color: #ffffff;
+    background-color: #49A078;
+}

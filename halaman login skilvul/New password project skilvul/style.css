@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #DCE1DE;
+}
+
+.login-newpass {
+    text-align: center;
+}
+
+.header {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 50px 50px 90px 50px;
+
+}
+
+.header h5 {
+    margin-top: 30px;
+}
+
+.header p {
+ color: black;
+ font-family: Poppins;
+ margin-top: 10px;
+ word-wrap: break-word
+}
+
+.login-form {
+    margin-top: 30px;
+    text-align: left;
+}
+
+.login-form label {
+    text-align: right;
+color: black;
+font-family: Poppins;
+word-wrap: break-word
+}
+
+.login-form input {
+color: rgba(0, 0, 0, 0.25);
+font-family: Roboto;
+line-height: 28px;
+word-wrap: break-word
+}
+
+
+.login-form button {
+    padding-right: 120px;
+    padding-left: 120px;
+    margin-top: 70px;
+   font-family: Roboto;
+   line-height: 32px;
+   color: #ffffff;
+   background-color: #49A078;
+   border-radius: 5px;
+   border-style: none;
+}

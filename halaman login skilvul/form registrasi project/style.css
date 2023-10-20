@@ -1,0 +1,73 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #DCE1DE;
+}
+
+.registrasi {
+    text-align: center;
+}
+
+.header {
+    text-align: center;
+    padding-top: 50px;
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-bottom: 50px;
+    background-color: #ffffff;
+}
+
+.header p {
+ color: black;
+ font-family: poppins;
+ word-wrap: break-word
+}
+
+.login-form label {
+text-align: right;
+color: black;
+font-family: Poppins;
+word-wrap: break-word
+}
+
+.login-form input {
+color: rgba(0, 0, 0, 0.25);
+font-family: Roboto;
+word-wrap: break-word
+}
+
+
+.login-form .signin {
+font-family: Roboto;
+color: #ffffff;
+background-color: #49A078;
+padding-left: 90px;
+padding-right: 90px;
+border-style: none;
+border-radius: 5px;
+word-wrap: break-word
+}
+
+.login-form .signin-google {
+color: rgba(0, 0, 0, 0.85);
+padding-left: 35px;
+padding-right: 35px;
+border-style: none;
+font-family: Roboto;
+word-wrap: break-word
+}
+
+.login-form span {
+color: black;
+font-family: Poppins;
+word-wrap: break-word
+}
+
+.login-form span a {
+color: #1F9BF5;
+font-family: Poppins;
+word-wrap: break-word
+}
