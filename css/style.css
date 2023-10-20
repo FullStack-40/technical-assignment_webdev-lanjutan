@@ -32,6 +32,18 @@ body {
   background-color: #267576;
 }
 
+#nav-btn .dropdown-menu {
+  background-color: #49a078;
+}
+
+#nav-btn .dropdown-item {
+  color: #fff;
+}
+
+#nav-btn .dropdown-item:hover {
+  background-color: #56bc8d;
+}
+
 /* hero section */
 #hero {
   padding: 4em 8em;
