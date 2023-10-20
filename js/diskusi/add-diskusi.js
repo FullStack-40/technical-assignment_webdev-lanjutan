@@ -12,16 +12,22 @@ async function submit() {
     alert("Tolong lengkapi detail diskusi!");
   } else {
     try {
-      const username = localStorage.getItem("username");
-      const avatar = localStorage.getItem("avatar");
+      const { name, avatar } = JSON.parse(localStorage.getItem("user"));
+
       const createdAt = new Date().toISOString();
-      
+
       const response = await fetch(
         "https://652935bd55b137ddc83e6345.mockapi.io/discussion",
         {
           method: "POST",
 
-          body: JSON.stringify({ ...data, liked: 0, username, createdAt, avatar }),
+          body: JSON.stringify({
+            ...data,
+            liked: 0,
+            username: name,
+            createdAt,
+            avatar,
+          }),
           headers: {
             "Content-type": "application/json; charset=UTF-8",
           },

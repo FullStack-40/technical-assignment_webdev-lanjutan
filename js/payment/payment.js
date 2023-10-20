@@ -20,6 +20,20 @@ payBtn.addEventListener("click", () => {
     return;
   }
 
+  let consultationSchedule = JSON.parse(
+    localStorage.getItem("consultationSchedule")
+  );
+
+  if (consultationSchedule) {
+    consultationSchedule.push(bookingInfo);
+    localStorage.setItem(
+      "consultationSchedule",
+      JSON.stringify(consultationSchedule)
+    );
+  } else {
+    localStorage.setItem("consultationSchedule", JSON.stringify([bookingInfo]));
+  }
+
   bookingInfo["paymentMethod"] = paymentMethod;
   localStorage.setItem("bookingInfo", JSON.stringify(bookingInfo));
   window.location.href = "../payment/status.html";

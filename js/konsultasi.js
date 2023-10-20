@@ -1,17 +1,20 @@
 const listKonsultasi = document.getElementById("list-konsultasi");
-const bookingInfo = JSON.parse(localStorage.getItem("bookingInfo"));
+const consultationSchedule = JSON.parse(
+  localStorage.getItem("consultationSchedule")
+);
 
-listKonsultasi.innerHTML += `
+consultationSchedule.map((schedule) => {
+  listKonsultasi.innerHTML += `
 <div class="row mt-5">
 <div class="card">
   <div
     class="card-body d-flex justify-content-around align-items-center flex-wrap"
   >
     <div class="d-flex gap-2 align-items-center">
-      <img src=${bookingInfo.doctor.imageURL} width="90" height="80" alt="" />
+      <img src=${schedule.doctor.imageURL} width="90" height="80" alt="" />
       <div>
-        <h3>${bookingInfo.doctor.name}</h3>
-        <h5>${bookingInfo.doctor.specialist}</h5>
+        <h3>${schedule.doctor.name}</h3>
+        <h5>${schedule.doctor.specialist}</h5>
       </div>
     </div>
     <div class="d-flex gap-3 align-items-center">
@@ -29,8 +32,8 @@ listKonsultasi.innerHTML += `
         />
       </svg>
       <div id="date">
-        <p>${bookingInfo.date}</p>
-        <p>${bookingInfo.time}.00 WIB</p>
+        <p>${schedule.date}</p>
+        <p>${schedule.time}.00 WIB</p>
       </div>
     </div>
     <h5>Menunggu</h5>
@@ -40,3 +43,4 @@ listKonsultasi.innerHTML += `
 </div>
 </div>
 `;
+});
