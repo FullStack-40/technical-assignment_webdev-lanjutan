@@ -9,7 +9,11 @@ signInButton.addEventListener("click", async function () {
   if (email && password) {
     const user = await getUserByEmail(email);
 
-    if (user[0].email == email && user[0].password == password) {
+    if (
+      user.length !== 0 &&
+      user[0].email == email &&
+      user[0].password == password
+    ) {
       localStorage.setItem("login", true);
       localStorage.setItem("username", user[0].username);
       localStorage.setItem("avatar", user[0].avatar);
