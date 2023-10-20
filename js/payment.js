@@ -22,6 +22,7 @@ payBtn.addEventListener("click", () => {
 
   bookingInfo["paymentMethod"] = paymentMethod;
   localStorage.setItem("bookingInfo", JSON.stringify(bookingInfo));
+  window.location.href = "../payment/status.html";
 });
 
 createPaymentInformationCard();
