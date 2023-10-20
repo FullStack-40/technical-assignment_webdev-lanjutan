@@ -16,17 +16,12 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-      crossorigin="anonymous"
-    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/forum-diskusi.css" />
+    <link rel="stylesheet" href="../css/dokter.css" />
     <script src="../js/script.js" defer></script>
-    <script src="../js/add-diskusi.js" defer></script>
+    <script src="../js/detail-dokter.js" defer></script>
   </head>
   <body>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top nav-custom">
@@ -58,12 +53,12 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../dokter/daftar-dokter.html"
-                >Daftar Dokter</a
-              >
+              <a class="nav-link" href="./daftar-dokter.html">Daftar Dokter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./diskusi.html">Forum Diskusi</a>
+              <a class="nav-link" href="../forum-diskusi/diskusi.html"
+                >Forum Diskusi</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Artikel</a>
@@ -77,51 +72,33 @@
       </div>
     </nav>
 
-    <section id="add-diskusi">
+    <section id="detail-doctor">
       <div class="container-fluid">
-        <h1>Buat diskusi baru</h1>
-        <div class="row">
-          <div class="col-lg-3">
-            <h3>Kata Kunci</h3>
-          </div>
-          <div class="col-lg-9">
-            <div class="input-group input-group-sm mb-3">
-              <input
-                type="text"
-                class="form-control keyword-discussion"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-              />
-            </div>
-            <p class="mb-0">
-              Tuliskan beberapa kata kunci pertanyaan Anda di sini dengan tanda
-              koma sebagai pemisah (tanpa spasi).
-            </p>
-            <p>Contoh: <b>gizi, makanansehat, polahidup</b></p>
+        <div class="row" id="detail-doctor-container"></div>
+        <div class="row mt-5">
+          <div class="input-group">
+            <span class="input-group-text">Pilih jadwal</span>
+            <input
+              type="date"
+              aria-label="First name"
+              class="form-control"
+              id="date"
+            />
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              id="time-select"
+            >
+              <option value="none" selected>Pilih Waktu</option>
+            </select>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-3">
-            <h3>Pertanyaan</h3>
-          </div>
-          <div class="col-lg-9">
-            <div class="form-floating">
-              <textarea
-                class="form-control discussion"
-                placeholder="Tulis isi pertanyaan"
-                id="floatingTextarea2"
-                style="height: 100px"
-              ></textarea>
-              <label for="floatingTextarea2">Tulis isi pertanyaan</label>
-            </div>
-          </div>
-        </div>
-        <div id="button">
-          <button type="button" class="btn btn-success">Buat diskusi</button>
+        <div class="mt-5 d-flex justify-content-end">
+          <button type="button" class="btn btn-success px-4 py-2" id="booking">
+            Buat janji
+          </button>
         </div>
       </div>
-      <br />
-      <br>
     </section>
 
     <footer>
@@ -133,5 +110,9 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

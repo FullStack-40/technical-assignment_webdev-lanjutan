@@ -24,9 +24,9 @@
     />
 
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/forum-diskusi.css" />
+    <link rel="stylesheet" href="../css/daftar-konsultasi.css" />
     <script src="../js/script.js" defer></script>
-    <script src="../js/add-diskusi.js" defer></script>
+    <script src="../js/konsultasi.js" defer></script>
   </head>
   <body>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top nav-custom">
@@ -63,7 +63,9 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./diskusi.html">Forum Diskusi</a>
+              <a class="nav-link" href="../forum-diskusi/diskusi.html"
+                >Forum Diskusi</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Artikel</a>
@@ -77,54 +79,14 @@
       </div>
     </nav>
 
-    <section id="add-diskusi">
+    <section id="daftar-konsultasi">
       <div class="container-fluid">
-        <h1>Buat diskusi baru</h1>
-        <div class="row">
-          <div class="col-lg-3">
-            <h3>Kata Kunci</h3>
-          </div>
-          <div class="col-lg-9">
-            <div class="input-group input-group-sm mb-3">
-              <input
-                type="text"
-                class="form-control keyword-discussion"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-              />
-            </div>
-            <p class="mb-0">
-              Tuliskan beberapa kata kunci pertanyaan Anda di sini dengan tanda
-              koma sebagai pemisah (tanpa spasi).
-            </p>
-            <p>Contoh: <b>gizi, makanansehat, polahidup</b></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-3">
-            <h3>Pertanyaan</h3>
-          </div>
-          <div class="col-lg-9">
-            <div class="form-floating">
-              <textarea
-                class="form-control discussion"
-                placeholder="Tulis isi pertanyaan"
-                id="floatingTextarea2"
-                style="height: 100px"
-              ></textarea>
-              <label for="floatingTextarea2">Tulis isi pertanyaan</label>
-            </div>
-          </div>
-        </div>
-        <div id="button">
-          <button type="button" class="btn btn-success">Buat diskusi</button>
-        </div>
+        <h1>Sesi <span>Konsultasi</span></h1>
+        <div id="list-konsultasi"></div>
       </div>
-      <br />
-      <br>
     </section>
 
-    <footer>
+    <footer class="fixed-bottom">
       <p id="copyright" class="text-light">Created with 💖 By Kelompok FS-40</p>
     </footer>
 

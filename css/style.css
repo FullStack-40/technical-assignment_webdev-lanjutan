@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -35,6 +39,10 @@ body {
   background-color: #49a078;
 }
 
+#hero h1 {
+  font-size: 36px;
+}
+
 #hero p {
   font-size: 16px;
 }
@@ -44,8 +52,8 @@ body {
 }
 
 .hero-image #circle {
-  width: 520px;
-  height: 520px;
+  width: 33vw;
+  height: 33vw;
   right: 2em;
   bottom: 0;
   z-index: -1;
@@ -59,8 +67,8 @@ body {
 
 #advantages #square {
   display: block;
-  width: 400px;
-  height: 400px;
+  width: 27vw;
+  height: 27vw;
   position: absolute;
   bottom: 1.5em;
   background-color: #49a078;
@@ -70,7 +78,7 @@ body {
 
 .advantages-text {
   position: absolute;
-  right: 10em;
+  right: 8em;
 }
 
 #advantages span {
@@ -78,11 +86,17 @@ body {
 }
 
 #advantages .desc {
-  font-size: 1.1em;
+  font-size: 16px;
 }
 
 #advantages .card {
   background-color: #49a078;
+  padding: 1em;
+  height: 45vh;
+}
+
+#advantages .card-body {
+  padding: 0;
 }
 
 #advantages .card-icons {
@@ -96,40 +110,44 @@ body {
   padding: 4em 8em;
 }
 
+#best-doctor h1 {
+  font-size: 32px;
+}
+
 #best-doctor span {
   color: #49a078;
 }
 
 #best-doctor .desc {
-  font-size: 1.1em;
+  font-size: 16px;
   width: 70%;
   margin: 1em auto;
 }
 
-.carousel-indicators {
+#best-doctor .carousel-indicators {
   position: absolute;
   bottom: -4em;
 }
 
-.carousel-inner h1 {
+#best-doctor .carousel-inner img {
+  border-radius: 20px;
+}
+
+#best-doctor .carousel-inner h1 {
   font-size: 32px;
   font-weight: bold;
 }
 
-.carousel-inner h2 {
-  font-size: 1.5em;
+#best-doctor .carousel-inner h2 {
+  font-size: 20px;
   font-weight: semibold;
   font-size: 1.25em;
   color: #49a078;
 }
 
-.carousel-inner p {
+#best-doctor .carousel-inner p {
   font-size: 16px;
   margin-top: 1em;
-}
-
-.carousel-inner img {
-  border-radius: 20px;
 }
 
 /* Footer */
@@ -154,7 +172,7 @@ footer p {
 }
 
 address {
-  font-size: 0.9em;
+  font-size: 14px;
 }
 
 #subs-form input {
@@ -191,16 +209,156 @@ address {
   margin-top: 4em;
 }
 
-@media screen and (max-width: 768px) {
-  /* Nav */
+@media screen and (max-width: 1200px) {
+  .nav-custom {
+    padding: 1em 4em;
+  }
+
+  #hero {
+    padding: 3em 4em;
+    margin-top: 3.75em;
+  }
+
+  #hero h1 {
+    font-size: 32px;
+  }
+
+  .hero-image #circle {
+    display: block;
+    width: 35vw;
+    height: 35vw;
+    bottom: 0;
+  }
+
+  #advantages {
+    padding: 1em 4em;
+  }
+
+  .advantages-img img {
+    width: 350px;
+  }
+
+  #advantages #square {
+    width: 28vw;
+    height: 28vw;
+    bottom: 1em;
+  }
+
+  .advantages-text {
+    position: static;
+  }
+
+  .advantages-text .title {
+    font-size: 28px;
+  }
+
+  #advantages .card {
+    margin: 0 auto;
+  }
+
+  #advantages .card-title {
+    font-size: 20px;
+  }
+
+  #best-doctor {
+    padding: 1em 4em;
+  }
+
+  #best-doctor h1 {
+    font-size: 28px;
+  }
+
+  #best-doctor .desc {
+    font-size: 16px;
+    width: 90%;
+  }
+
+  #best-doctor .doctors {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2em;
+  }
+
+  #best-doctor .carousel-inner img {
+    width: 500px;
+  }
+
+  #best-doctor .carousel-inner h1 {
+    font-size: 24px;
+  }
+
+  #best-doctor .carousel-inner h2 {
+    font-size: 18px;
+  }
+
+  #best-doctor .carousel-inner p {
+    margin-bottom: 3em;
+    font-size: 16px;
+  }
+
+  footer {
+    padding: 2em 4em 0.2em;
+  }
+
+  footer .col-6 {
+    width: 100%;
+    margin-bottom: 2em;
+  }
+
+  .footer-logo {
+    width: 170px;
+  }
+
+  address {
+    margin-bottom: 0;
+  }
+
+  #subs-form {
+    width: 80%;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 992px) {
   .nav-custom {
     padding: 1em 0;
   }
 
+  #hero {
+    padding: 3em 0;
+  }
+
+  #hero h1 {
+    font-size: 28px;
+  }
+
+  .hero-image #circle {
+    width: 40vw;
+    height: 40vw;
+  }
+
+  #advantages {
+    padding: 1em 0;
+  }
+
+  #advantages #square {
+    width: 33vw;
+    height: 33vw;
+  }
+
+  #best-doctor {
+    padding: 1em 0;
+  }
+
+  footer {
+    padding: 2em 0 0.2em;
+  }
+}
+
+@media screen and (max-width: 768px) {
   /* Hero */
   #hero {
     margin-top: 3.75em;
-    padding: 3em 0;
   }
 
   .hero-text {
@@ -211,12 +369,10 @@ address {
 
   #hero h1 {
     margin-top: 0.5em;
-    font-size: 40px;
     text-align: center;
   }
 
   #hero p {
-    font-size: 16px;
     text-align: center;
     margin-bottom: 1em;
   }
@@ -234,23 +390,13 @@ address {
   }
 
   .hero-image #circle {
-    display: block;
-    width: 250px;
-    height: 250px;
-    position: absolute;
-    bottom: 0;
-    border-radius: 50%;
-    background-color: #41b57f;
-    z-index: -1;
+    width: 30vw;
+    height: 30vw;
   }
 
   /* advantages */
   #advantages {
     padding: 1em 0;
-  }
-
-  #advantage-row {
-    display: block;
   }
 
   .advantages-img {
@@ -261,30 +407,19 @@ address {
   }
 
   #advantages #square {
-    display: block;
-    width: 250px;
-    height: 250px;
-    position: absolute;
-    bottom: 1em;
-    background-color: #49a078;
-    border-radius: 10px;
-    z-index: -1;
-  }
-
-  .advantages-text {
-    position: static;
+    width: 35vh;
+    height: 35vh;
   }
 
   .advantages-text .title {
     text-align: center;
     margin-top: 1em;
-    font-size: 2em;
     margin-bottom: 1em;
   }
 
   #advantages .card {
-    width: 90%;
-    margin: 0 auto;
+    width: 80%;
+    height: 30vh;
   }
 
   /* best doctor */
@@ -292,36 +427,8 @@ address {
     padding: 1em 0;
   }
 
-  #best-doctor .desc {
-    font-size: 1em;
-    width: 90%;
-  }
-
-  .doctors {
-    display: flex;
-    flex-direction: column;
-    padding: 0 2em;
-  }
-
-  #best-doctors img {
-    width: 300px;
-  }
-
-  .carousel-inner img {
-    width: 350px;
-  }
-
-  .carousel-inner h1 {
-    font-size: 28px;
-  }
-
-  .carousel-inner h2 {
-    font-size: 1.1em;
-  }
-
-  .carousel-inner p {
-    margin-bottom: 3em;
-    font-size: 16px;
+  #best-doctor .carousel-inner img {
+    width: 400px;
   }
 
   /* footer mobile*/
@@ -329,30 +436,10 @@ address {
     padding: 2em 0 0.2em;
   }
 
-  footer p {
-    font-size: 14px;
-  }
-
   footer .row {
     display: flex;
     flex-direction: column;
     gap: 1.5em;
-  }
-
-  footer .col-6 {
-    width: 100%;
-  }
-
-  .footer-logo {
-    width: 170px;
-  }
-
-  address {
-    margin-bottom: 0;
-  }
-
-  address p {
-    font-size: 14px;
   }
 
   #subs-form {

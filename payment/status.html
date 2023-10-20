@@ -16,17 +16,12 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
-      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
-      crossorigin="anonymous"
-    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/forum-diskusi.css" />
+    <link rel="stylesheet" href="../css/payment.css" />
     <script src="../js/script.js" defer></script>
-    <script src="../js/add-diskusi.js" defer></script>
+    <script src="../js/payment-status.js" defer></script>
   </head>
   <body>
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top nav-custom">
@@ -63,7 +58,9 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./diskusi.html">Forum Diskusi</a>
+              <a class="nav-link" href="../forum-diskusi/diskusi.html"
+                >Forum Diskusi</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Artikel</a>
@@ -77,51 +74,50 @@
       </div>
     </nav>
 
-    <section id="add-diskusi">
+    <section id="status">
       <div class="container-fluid">
-        <h1>Buat diskusi baru</h1>
         <div class="row">
-          <div class="col-lg-3">
-            <h3>Kata Kunci</h3>
-          </div>
-          <div class="col-lg-9">
-            <div class="input-group input-group-sm mb-3">
-              <input
-                type="text"
-                class="form-control keyword-discussion"
-                aria-label="Sizing example input"
-                aria-describedby="inputGroup-sizing-sm"
-              />
-            </div>
-            <p class="mb-0">
-              Tuliskan beberapa kata kunci pertanyaan Anda di sini dengan tanda
-              koma sebagai pemisah (tanpa spasi).
-            </p>
-            <p>Contoh: <b>gizi, makanansehat, polahidup</b></p>
-          </div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="176"
+            height="142"
+            viewBox="0 0 176 142"
+            fill="none"
+          >
+            <path
+              d="M2 71L23.457 48L66.3709 94L152.199 2L173.656 25L66.3709 140L2 71Z"
+              stroke="#49A078"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <h2 class="text-center" style="color: #49a078">Berhasil</h2>
+          <h4 class="text-center" id="payment-date"></h4>
         </div>
-        <div class="row">
-          <div class="col-lg-3">
-            <h3>Pertanyaan</h3>
+        <div class="row mt-5">
+          <h4>Merchant</h4>
+          <div>
+            <img src="../img/life-well-image.png" width="300" alt="" />
           </div>
-          <div class="col-lg-9">
-            <div class="form-floating">
-              <textarea
-                class="form-control discussion"
-                placeholder="Tulis isi pertanyaan"
-                id="floatingTextarea2"
-                style="height: 100px"
-              ></textarea>
-              <label for="floatingTextarea2">Tulis isi pertanyaan</label>
-            </div>
-          </div>
+          <h4 class="mt-5">No. Referensi</h4>
+          <p id="no-ref"></p>
         </div>
-        <div id="button">
-          <button type="button" class="btn btn-success">Buat diskusi</button>
+        <div class="row mt-5">
+          <hr />
+          <h4 class="mt-3">Sumber Dana</h4>
+          <div class="d-flex justify-content-between mt-2 mb-3">
+            <h5 class="fw-semibold" id="funds-method">OVO</h5>
+            <h5 class="fw-semibold" id="funds">Rp. 90000</h5>
+          </div>
+          <hr />
+        </div>
+        <div class="d-flex justify-content-end mt-3">
+          <button type="button" class="btn btn-success px-4 py-2 next-btn">
+            Selanjutnya
+          </button>
         </div>
       </div>
-      <br />
-      <br>
     </section>
 
     <footer>

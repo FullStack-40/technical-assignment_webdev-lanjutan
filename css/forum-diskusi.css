@@ -17,7 +17,6 @@ section h1 {
 }
 
 /* Daftar Diskusi */
-
 #forum-diskusi span {
   color: #49a078;
 }
@@ -142,6 +141,36 @@ form svg {
   border-radius: 50%;
 }
 
+footer {
+  padding: 0.1rem;
+}
+
+footer #copyright {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 1200px) {
+  section {
+    padding: 1em 4em;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  section {
+    padding: 1em 2em;
+  }
+
+  #forum-diskusi .keyword {
+    display: none;
+  }
+
+  #forum-diskusi .square {
+    margin: 0 auto;
+    margin-bottom: 2em;
+    width: 30vw;
+  }
+}
+
 @media screen and (max-width: 768px) {
   section {
     padding: 1em 0;
@@ -163,6 +192,8 @@ form svg {
   #forum-diskusi .square {
     width: 93%;
     margin: 0 auto;
+    margin-bottom: 1em;
+    width: 40vw;
   }
 
   #forum-diskusi .square > div {
